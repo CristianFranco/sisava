@@ -967,7 +967,7 @@ form label {
 .work-grid .desc .cat {
   font-size: 12px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 1.0);
   letter-spacing: 2px;
   margin-bottom: 20px;
   display: block;

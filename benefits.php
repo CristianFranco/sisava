@@ -69,7 +69,7 @@
         ?>
     </div>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_2.jpg);">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/stLogo_Color.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -97,108 +97,56 @@
 				<div class="col-md-4 col-sm-4 text-center animate-box">
 					<div class="work-grid" style="background-image: url(images/project-2.jpg);">
 						<div class="desc">
-							<h3><a href="#">Work Title Here</a></h3>
-							<span class="cat">Web Design</span>
-							<p>
-								<span class="download"><a href="#"><i class="icon-download"></i></a></span>
-								<span class="love"><a href="#"><i class="icon-heart"></i></a></span>
-							</p>
+							<h3><a href="#">DIRECTO A TU OFICINA</a></h3>
+							<span class="cat">Sólo contactanos y estaremos ahí</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 text-center animate-box">
 					<div class="work-grid" style="background-image: url(images/project-3.jpg);">
 						<div class="desc">
-							<h3><a href="#">Work Title Here</a></h3>
-							<span class="cat">Web Design</span>
-							<p>
-								<span class="download"><a href="#"><i class="icon-download"></i></a></span>
-								<span class="love"><a href="#"><i class="icon-heart"></i></a></span>
-							</p>
+							<h3><a href="#">CITAS DEFINIDAS</a></h3>
+							<span class="cat">Tu defines la fecha y la hora</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 text-center animate-box">
 					<div class="work-grid" style="background-image: url(images/project-4.jpg);">
 						<div class="desc">
-							<h3><a href="#">Work Title Here</a></h3>
-							<span class="cat">Web Design</span>
-							<p>
-								<span class="download"><a href="#"><i class="icon-download"></i></a></span>
-								<span class="love"><a href="#"><i class="icon-heart"></i></a></span>
-							</p>
+							<h3><a href="#">PAGOS</a></h3>
+							<span class="cat">Realiza el pago hasta que el servicio esté completo</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 text-center animate-box">
 					<div class="work-grid" style="background-image: url(images/project-5.jpg);">
 						<div class="desc">
-							<h3><a href="#">Work Title Here</a></h3>
-							<span class="cat">Web Design</span>
-							<p>
-								<span class="download"><a href="#"><i class="icon-download"></i></a></span>
-								<span class="love"><a href="#"><i class="icon-heart"></i></a></span>
-							</p>
+							<h3><a href="#">INOVACIÓN</a></h3>
+							<span class="cat">Tenemos gente con grandes ideas que cubriran tus necesidades de manera novedosa</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 text-center animate-box">
 					<div class="work-grid" style="background-image: url(images/project-6.jpg);">
 						<div class="desc">
-							<h3><a href="#">Work Title Here</a></h3>
-							<span class="cat">Web Design</span>
-							<p>
-								<span class="download"><a href="#"><i class="icon-download"></i></a></span>
-								<span class="love"><a href="#"><i class="icon-heart"></i></a></span>
-							</p>
+							<h3><a href="#">SERVICIO CONTINUO</a></h3>
+							<span class="cat">Recibimos peticiones las 24 horas del día, los 7 días de la semana</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 text-center animate-box">
 					<div class="work-grid" style="background-image: url(images/project-7.jpg);">
 						<div class="desc">
-							<h3><a href="#">Work Title Here</a></h3>
-							<span class="cat">Web Design</span>
-							<p>
-								<span class="download"><a href="#"><i class="icon-download"></i></a></span>
-								<span class="love"><a href="#"><i class="icon-heart"></i></a></span>
-							</p>
+							<h3><a href="#">PRODUCTOS Y SERVICIOS</a></h3>
+							<span class="cat">Ofrecemos una gran gama de productos y servicios para tu empresa</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 text-center animate-box">
 					<div class="work-grid" style="background-image: url(images/project-8.jpg);">
 						<div class="desc">
-							<h3><a href="#">Work Title Here</a></h3>
-							<span class="cat">Web Design</span>
-							<p>
-								<span class="download"><a href="#"><i class="icon-download"></i></a></span>
-								<span class="love"><a href="#"><i class="icon-heart"></i></a></span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4 text-center animate-box">
-					<div class="work-grid" style="background-image: url(images/project-9.jpg);">
-						<div class="desc">
-							<h3><a href="#">Work Title Here</a></h3>
-							<span class="cat">Web Design</span>
-							<p>
-								<span class="download"><a href="#"><i class="icon-download"></i></a></span>
-								<span class="love"><a href="#"><i class="icon-heart"></i></a></span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4 text-center animate-box">
-					<div class="work-grid" style="background-image: url(images/project-2.jpg);">
-						<div class="desc">
-							<h3><a href="#">Work Title Here</a></h3>
-							<span class="cat">Web Design</span>
-							<p>
-								<span class="download"><a href="#"><i class="icon-download"></i></a></span>
-								<span class="love"><a href="#"><i class="icon-heart"></i></a></span>
-							</p>
+							<h3><a href="#">CALIFICACION</a></h3>
+							<span class="cat">Califica el servicio y deja comentarios, para que otros puedan verlos</span>
 						</div>
 					</div>
 				</div>

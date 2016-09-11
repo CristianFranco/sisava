@@ -79,7 +79,6 @@
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>SITHEC</h1>
 							<h2>Siempre ayudandote a las necesidades de tu negocio</h2>
-							<p><a href="#" class="btn btn-default">View Our Work</a></p>
 						</div>
 					</div>
 				</div>

@@ -69,7 +69,7 @@
         ?>
     </div>
 
-	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/img_bg_2.jpg);">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/stLogo_Color.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
@@ -77,7 +77,7 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>Clientes</h1>
-							<h2>Te mostramos lo que han dicho nuestros clientes</h2>
+							<h2>Te mostramos lo que han dicho nuestros clientes, estos testimonios se actualizan constantemente para tu mejor experiencia</h2>
 						</div>
 					</div>
 				</div>
@@ -96,7 +96,8 @@
 				<div class="col-md-4 animate-box">
 					<div class="testimony">
 						<blockquote>
-							&ldquo;En la empresa teníamos un problema muy grande, la cantidad de información que teníamos que procesar al día era inmensa. Alguien nos habló de Sithec y de como podíamos pedir un sistema desde su plataforma en linea, la verdad nunca he quedado más satisfecho.&rdquo;
+							&ldquo;En la empresa teníamos un problema muy grande, la cantidad de información que teníamos que procesar al día era inmensa. Alguien nos habló de Sithec y de como podíamos pedir un sistema desde su plataforma en linea, la verdad nunca he quedado más satisfecho.&rdquo;<br>
+							<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
 						</blockquote>
 						<p class="author"><cite>Juan García</cite></p>
 					</div>
@@ -104,17 +105,48 @@
 				<div class="col-md-4 animate-box">
 					<div class="testimony">
 						<blockquote>
-							&ldquo;Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius&rdquo;
+							&ldquo;Era demasiado urgente para mi contar con un paquete de contabilidad en mi empresa. Utilizando los servicios en linea de Sithec me fue muy sencillo conseguirlo, además ellos se encargaron de todo.&rdquo;<br>
+							<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
 						</blockquote>
-						<p class="author"><cite>Rob Smith</cite></p>
+						<p class="author"><cite>Roberto Aguilar</cite></p>
 					</div>
 				</div>
 				<div class="col-md-4 animate-box">
 					<div class="testimony">
 						<blockquote>
-							&ldquo;Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius&rdquo;
+							&ldquo;Un servicio excelente de parte de Sithec, la instalación de la red en mi negocio ha sido todo un éxito. La verdad es que los recomiendo ampliamente&rdquo;<br>
+							<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
 						</blockquote>
-						<p class="author"><cite>Jane Doe</cite></p>
+						<p class="author"><cite>Susana Montenegro</cite></p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 animate-box">
+					<div class="testimony">
+						<blockquote>
+							&ldquo;En la empresa teníamos un problema muy grande, la cantidad de información que teníamos que procesar al día era inmensa. Alguien nos habló de Sithec y de como podíamos pedir un sistema desde su plataforma en linea, la verdad nunca he quedado más satisfecho.&rdquo;<br>
+							<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+						</blockquote>
+						<p class="author"><cite>Juan García</cite></p>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="testimony">
+						<blockquote>
+							&ldquo;Era demasiado urgente para mi contar con un paquete de contabilidad en mi empresa. Utilizando los servicios en linea de Sithec me fue muy sencillo conseguirlo, además ellos se encargaron de todo.&rdquo;<br>
+							<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+						</blockquote>
+						<p class="author"><cite>Roberto Aguilar</cite></p>
+					</div>
+				</div>
+				<div class="col-md-4 animate-box">
+					<div class="testimony">
+						<blockquote>
+							&ldquo;Un servicio excelente de parte de Sithec, la instalación de la red en mi negocio ha sido todo un éxito. La verdad es que los recomiendo ampliamente&rdquo;<br>
+							<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
+						</blockquote>
+						<p class="author"><cite>Susana Montenegro</cite></p>
 					</div>
 				</div>
 			</div>
