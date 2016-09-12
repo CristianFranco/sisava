@@ -115,10 +115,10 @@
 					<div class="fh5co-contact-info">
 						<h3>Información de Contacto</h3>
 						<ul>
-							<li class="address">San José de los Reynoso 305, <br> Bosques, Aguascalientes, México</li>
-							<li class="phone"><a href="tel://4491234567">449 123 4567</a></li>
-							<li class="email"><a href="mailto:informes@sithec.com">informes@sithec.com</a></li>
-							<li class="url"><a href="http://Sithec.com">Sithec.com</a></li>
+							<li class="address">San José de los Reynoso 307, <br> Bosques, Aguascalientes, México</li>
+							<li class="phone"><a href="tel://4491234567">449 144 1146</a></li>
+							<li class="email"><a href="mailto:informes@sithec.com">cristian.franco@sithec.com.mx</a></li>
+							<li class="url"><a href="http://Sithec.com.mx">Sithec.com.mx</a></li>
 						</ul>
 					</div>
 

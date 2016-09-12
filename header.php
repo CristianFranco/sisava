@@ -63,7 +63,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-2">
-                        <div id="fh5co-logo"><a href="index.php"><font color="#2e4464">SIT</font><font color="#ffffff">HEC</font></a></div>
+                        <div id="fh5co-logo"><a href="index.php"><img src="images/Logos/stLogo_Color.png" width="80%"></a></div>
                     </div>
                     <div class="col-xs-10 text-right menu-1">
                         <ul>
