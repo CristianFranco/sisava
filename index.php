@@ -58,7 +58,7 @@
 				<div class="col-md-10 col-md-offset-1 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>SITHEC</h1>
+							<img src="images/Logos/stLogo_Blanco.png" width="25%">
 							<h2>Siempre ayudandote a las necesidades de tu negocio</h2>
 						</div>
 					</div>
@@ -110,8 +110,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-forth fh5co-video fh5co-bg" style="background-image: url(images/image_1.jpg)">
-					<a href="https://vimeo.com/channels/staffpicks/93951774" class="popup-vimeo"><i class="icon-video2"></i></a>
+				<div class="col-forth fh5co-video fh5co-bg" style="background-image: url(http://pccadla.com/wp-content/uploads/2015/04/servicios-ti.jpg)">
+					<a href="https://vimeo.com/182437777" class="popup-vimeo"><i class="icon-video2"></i></a>
 						<div class="overlay"></div>
 				</div>
 			</div>
