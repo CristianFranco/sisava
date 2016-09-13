@@ -42,7 +42,7 @@
 
 	</head>
 	<body>
-        <div id="fh5co-started">
+       <!-- <div id="fh5co-started">
             <div class="container">
                 <div class="row animate-box">
                     <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -105,13 +105,25 @@
                             <li><a href="#">API</a></li>
                         </ul>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="row copyright">
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-4 text-center">
+                        Tienes dudas, cont&aacute;ctanos<br>
+                Tel: 4491441146
+                <br/>
+                Correo:<br>
+                cristian.franco@sithec.com.mx<br/>
+                miguel.hernandez@sithec.com.mx
+                    </div>
+                    <div class="col-md-4 text-center">
+                            <img class="img-responsive" width="80%" src="images/Logos/stLogo_Azul.png" alt="work">
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center">
                         <p>
-                            <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-                            <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a></small>
+                            <small class="block">&copy; 2016 Sithec.</small> <br>
+                            <small class="block">Verifica nuestros <a href="#">Terminos y condicions</a> y nuestro <a href="#">aviso de privasidad</a></small>
                         </p>
                         <p>
                             <ul class="fh5co-social-icons">

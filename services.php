@@ -58,8 +58,8 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Services</h1>
-							<h2>Free html5 templates Made by <a href="http://freehtml5.co" target="_blank">freehtml5.co</a></h2>
+							<h1>Productos y servicios</h1>
+							<h2>Conoce los productos y servicios que Sithec te ofrece.</h2>
 						</div>
 					</div>
 				</div>
@@ -74,9 +74,9 @@
 					<span class="icon">
 						<i class="icon-eye"></i>
 					</span>
-					<h3>Retina Ready</h3>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><a href="#" class="btn btn-primary">Learn More</a></p>
+
+					<h3>Desarrollo de aplicaciones moviles</h3>
+					<p>Te ayudamos a llevar a cabo tu idea mediante la elaboración de aplicaciones moviles tanto para Android como para IOs</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4">
@@ -84,9 +84,8 @@
 					<span class="icon">
 						<i class="icon-command"></i>
 					</span>
-					<h3>Fully Responsive</h3>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><a href="#" class="btn btn-primary">Learn More</a></p>
+					<h3>Desarrollo de pagínas web</h3>
+					<p>Desarrollamos la pagína web que necesitas desde una pagina corporativa hasta un sistema web avanzado.</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4">
@@ -94,9 +93,8 @@
 					<span class="icon">
 						<i class="icon-power"></i>
 					</span>
-					<h3>Web Starter</h3>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><a href="#" class="btn btn-primary">Learn More</a></p>
+					<h3>Desarrollo de aplicaciones de escritorio</h3>
+					<p>Te ayudamos a tener el control de tu negocio mediante una aplicacion de escritorio que tu ncesitas como por ejemplo tu inventario y punto de venta.</p>
 				</div>
 			</div>
 
@@ -105,9 +103,8 @@
 					<span class="icon">
 						<i class="icon-brush"></i>
 					</span>
-					<h3>Web Design</h3>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><a href="#" class="btn btn-primary">Learn More</a></p>
+					<h3>Implementación de Redes</h3>
+					<p>Nos encargamos de diseñar las redes que tu empresa necesita para estar interconectados para realizar su trabajo sin ningun problema.</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4">
@@ -115,9 +112,8 @@
 					<span class="icon">
 						<i class="icon-video2"></i>
 					</span>
-					<h3>Video Editing</h3>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><a href="#" class="btn btn-primary">Learn More</a></p>
+					<h3>Mantenimiento de redes</h3>
+					<p>Estamos al tanto de el estado de las redes de tu empresa mediante las mas avanzadas practicas.</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4">
@@ -125,9 +121,9 @@
 					<span class="icon">
 						<i class="icon-help2"></i>
 					</span>
-					<h3>24/7 Help &amp; Support</h3>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-					<p><a href="#" class="btn btn-primary">Learn More</a></p>
+					<h3>Software contable compaqi</h3>
+					<p>Te brindamos el Software que necesitas en tu empresa mediante la distribución de los software de compaqi.</p>
+
 				</div>
 			</div>
 		</div>

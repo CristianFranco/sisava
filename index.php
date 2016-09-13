@@ -78,9 +78,8 @@
 									<i class="icon-eye"></i>
 								</span>
 								<div class="desc">
-									<h3>Retina Ready</h3>
-									<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-									<p><a href="#" class="btn btn-primary">Learn More</a></p>
+									<h3>Consultoria</h3>
+									<p>En Sithec brindamos servicios de consultorias para los productos de compaqi los cuales tambien los puedes adquirir con nosotros.</p>
 								</div>
 							</div>
 						</div>
@@ -90,9 +89,8 @@
 									<i class="icon-power"></i>
 								</span>
 								<div class="desc">
-									<h3>Web Starter</h3>
-									<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-									<p><a href="#" class="btn btn-primary">Learn More</a></p>
+									<h3>Servicios de TI</h3>
+									<p>Te ayudamos a tener tu información constante y segura en tu organización, ayudandote a que tu trabajo jamas se detenga por problemas tecnicos.</p>
 								</div>
 							</div>
 						</div>
@@ -102,15 +100,14 @@
 									<i class="icon-laptop"></i>
 								</span>
 								<div class="desc">
-									<h3>Fully Responsive</h3>
-									<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-									<p><a href="#" class="btn btn-primary">Learn More</a></p>
+									<h3>Desarrollo de Software</h3>
+									<p>Desarrollamos Software a tus necesidades, ya sea para que tu empresa funcione de manera sistematizada, crear un nuevo modelo de negocios, etc. Desarrollamos aplicaciones moviles, paginas web y programas de escritorio.</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-forth fh5co-video fh5co-bg" style="background-image: url(http://pccadla.com/wp-content/uploads/2015/04/servicios-ti.jpg)">
+				<div class="col-forth fh5co-video fh5co-bg" style="background-image: url(http://www.diariolaprovinciasj.com/u/fotografias/fotosnoticias/2016/7/1/100978.jpg)">
 					<a href="https://vimeo.com/182437777" class="popup-vimeo"><i class="icon-video2"></i></a>
 						<div class="overlay"></div>
 				</div>
@@ -125,14 +122,14 @@
 					<div class="col-feature-9">
 						<div class="row">
 							<div class="col-md-12 fh5co-heading animate-box">
-								<h2>Core Features</h2>
-								<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+								<h2>Beneficios</h2>
+								<p>Al estar en unión con nosotros tendras bastantes beneficios que te ayudaran a seguir creciendo.</p>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-7 col-sm-7 col-md-pull-2 col-sm-pull-2 animate-box" data-animate-effect="fadeInRight">
 								<div class="feature-image">
-									<img src="images/work_1.png" alt="work">
+									<img src="images/outs.jpg" alt="work">
 								</div>
 							</div>
 							<div class="col-md-5 col-sm-5">
@@ -141,7 +138,7 @@
 										<i class="icon-check"></i>
 									</span>
 									<div class="feature-copy">
-										<h3>Retina Ready</h3>
+										<h3>Control</h3>
 										<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
 									</div>
 								</div>
@@ -151,7 +148,7 @@
 										<i class="icon-check"></i>
 									</span>
 									<div class="feature-copy">
-										<h3>Fully Responsive</h3>
+										<h3>Rapidez</h3>
 										<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
 									</div>
 								</div>
@@ -161,7 +158,7 @@
 										<i class="icon-check"></i>
 									</span>
 									<div class="feature-copy">
-										<h3>Ready To Use</h3>
+										<h3>Rapida toma de decisiones</h3>
 										<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
 									</div>
 								</div>
@@ -176,30 +173,24 @@
 									<div class="display-tc">
 										<div class="col-md-12 animate-box">
 											<div class="feature-center">
-												<span class="counter js-counter" data-from="0" data-to="2200" data-speed="5000" data-refresh-interval="50">1</span>
-												<span class="counter-label">Creativity Fuel</span>
+												<span class="counter js-counter" data-from="0" data-to="30" data-speed="5000" data-refresh-interval="50">1</span>
+												<span class="counter-label">Clientes</span>
 
 											</div>
 										</div>
 										<div class="col-md-12 animate-box">
 											<div class="feature-center">
 												<span class="counter js-counter" data-from="0" data-to="97" data-speed="5000" data-refresh-interval="50">1</span>
-												<span class="counter-label">Happy Clients</span>
+												<span class="counter-label">Proyectos realizados</span>
 											</div>
 										</div>
 										<div class="col-md-12 animate-box">
 											<div class="feature-center">
-												<span class="counter js-counter" data-from="0" data-to="402" data-speed="5000" data-refresh-interval="50">1</span>
-												<span class="counter-label">Projects Done</span>
+												<span class="counter js-counter" data-from="0" data-to="2" data-speed="4000" data-refresh-interval="50">1</span>
+												<span class="counter-label">Estados</span>
 											</div>
 										</div>
-										<div class="col-md-12 animate-box">
-											<div class="feature-center">
-												<span class="counter js-counter" data-from="0" data-to="4523" data-speed="5000" data-refresh-interval="50">1</span>
-												<span class="counter-label">Hours Spent</span>
 
-											</div>
-										</div>
 									</div>
 								</div>
 							</div>
@@ -221,7 +212,7 @@
 			<div class="row">
 				<div class="project">
 					<div class="col-md-8 col-md-push-5 animate-box" data-animate-effect="fadeInLeft">
-						<img class="img-responsive" src="images/work_1.png" alt="work">
+						<img class="img-responsive" src="https://assets.rbl.ms/2034496/1200x600.jpg" alt="work">
 					</div>
 					<div class="col-md-4 col-md-pull-8 animate-box" data-animate-effect="fadeInRight">
 						<div class="mt">

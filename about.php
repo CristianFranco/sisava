@@ -58,8 +58,8 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<img src="images/Logos/stLogo_Blanco.png" width="25%">
-							<h2>Siempre ayudandote a las necesidades de tu negocio</h2>
+						    <h1>Conocenos</h1>
+							<h2>Conocenos mejor, checa nuestra visión, Misión y nuestro staff.</h2>
 						</div>
 					</div>
 				</div>
@@ -72,17 +72,16 @@
 			<div class="about-content">
 				<div class="row animate-box">
 					<div class="col-md-6">
-						<img class="img-responsive" src="images/img_bg_1.jpg" alt="about">
+						<img class="img-responsive" src="images/staff/staff.jpg" alt="about">
 					</div>
 					<div class="col-md-6 col-md-pull-1">
 						<div class="desc">
 							<h3>Misión</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quo est quis mollitia ratione magni assumenda repellat atque modi temporibus tempore ex. Dolore facilis ex sunt ea praesentium expedita numquam?</p> 
-							<p>Quos quia provident consequuntur culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita. Possimus itaque adipisci rem dolorem nesciunt perferendis quae amet deserunt eum labore quidem minima.</p>
+							<p>Brindar un servicio adaptado a las necesidades de nuestros clientes, para así ayudarles a tener mejores resultados en sus negocios.</p> 
+							
 							<br>
 							<h3>Visión</h3>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quo est quis mollitia ratione magni assumenda repellat atque modi temporibus tempore ex. Dolore facilis ex sunt ea praesentium expedita numquam?</p> 
-							<p>Quos quia provident consequuntur culpa facere ratione maxime commodi voluptates id repellat velit eaque aspernatur expedita. Possimus itaque adipisci rem dolorem nesciunt perferendis quae amet deserunt eum labore quidem minima.</p>
+							<p>Ser la empresa líder de servicios de TI y desarrollo de software de America Latina, enfocados a mejorar los resultados tanto financieros como la comodidad dentro de sus negocios.</p> 
 						</div>
 					</div>
 				</div>
