@@ -47,13 +47,13 @@ body {
 }
 
 a {
-  color: #50CB86;
+  color: #334256;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #50CB86;
+  color: #334256;
   outline: none;
   text-decoration: none;
 }
