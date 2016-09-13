@@ -122,7 +122,7 @@
 					<div class="col-feature-9">
 						<div class="row">
 							<div class="col-md-12 fh5co-heading animate-box">
-								<h2>Beneficios</h2>
+								<h2>¿Por qué nosotros?</h2>
 								<p>Al estar en unión con nosotros tendras bastantes beneficios que te ayudaran a seguir creciendo.</p>
 							</div>
 						</div>
