@@ -110,7 +110,7 @@
 					<div class="fh5co-staff">
 						<img src="images/staff/mike.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
 						<h3>Miguel Angel Hernandez Muñoz</h3>
-						<strong class="role">Encargado de redes</strong>
+						<strong class="role">Encargado de seguridad</strong>
 
 						<ul class="fh5co-social-icons">
 							<li><a href="https://www.facebook.com/miguelangel.hernandezmunoz.3?fref=ts"><i class="icon-facebook"></i></a></li>
