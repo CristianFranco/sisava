@@ -123,7 +123,7 @@
                     <div class="col-md-4 text-center">
                         <p>
                             <small class="block">&copy; 2016 Sithec.</small> <br>
-                            <small class="block">Verifica nuestros <a href="#">Terminos y condicions</a> y nuestro <a href="#">aviso de privasidad</a></small>
+                            <small class="block">Verifica nuestros <a href="#">Términos y condiciones </a> y nuestro <a href="#">Aviso de privacidad</a></small>
                         </p>
                         <p>
                             <ul class="fh5co-social-icons">

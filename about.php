@@ -58,8 +58,8 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-						    <h1>Conocenos</h1>
-							<h2>Conocenos mejor, checa nuestra visión, Misión y nuestro staff.</h2>
+						    <h1>Conócenos </h1>
+							<h2>Conócenos mejor, checa nuestra visión, Misión y nuestro staff.</h2>
 						</div>
 					</div>
 				</div>
@@ -72,16 +72,16 @@
 			<div class="about-content">
 				<div class="row animate-box">
 					<div class="col-md-6">
-						<img class="img-responsive" src="images/staff/staff.jpg" alt="about">
+						<img class="img-responsive" src="images/hori.jpg" alt="about">
 					</div>
 					<div class="col-md-6 col-md-pull-1">
 						<div class="desc">
 							<h3>Misión</h3>
 							<p>Brindar un servicio adaptado a las necesidades de nuestros clientes, para así ayudarles a tener mejores resultados en sus negocios.</p> 
 							
-							<br>
+							<br><br><br>
 							<h3>Visión</h3>
-							<p>Ser la empresa líder de servicios de TI y desarrollo de software de America Latina, enfocados a mejorar los resultados tanto financieros como la comodidad dentro de sus negocios.</p> 
+							<p>Ser la empresa líder de servicios de TI y desarrollo de software de América Latina, enfocados a mejorar los resultados tanto financieros como la comodidad dentro de sus negocios.</p> 
 						</div>
 					</div>
 				</div>
@@ -89,13 +89,13 @@
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>Conoce nuestro Staff</h2>
-					<p>Nuestro equipo Sithec siempre esta al pendiente de tus necesidades, conocenos.</p>
+					<p>Nuestro equipo Sithec siempre está al pendiente de tus necesidades, conócenos.</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
 					<div class="fh5co-staff">
-						<img src="images/staff/cris.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
+						<img src="images/staff/cris.jpg" alt="">
 						<h3>Cristian Franco Alba</h3>
 						<strong class="role">Encargado de desarrollo</strong>
 
@@ -118,7 +118,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
+				<!-- <div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
 					<div class="fh5co-staff">
 						<img src="images/staff/hector.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
 						<h3>Hector Daniel Holguin Lopez</h3>
@@ -129,7 +129,7 @@
 							<li><a href="https://github.com/mangelhdz"><i class="icon-github"></i></a></li>
 						</ul>
 					</div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</div>

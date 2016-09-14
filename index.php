@@ -58,8 +58,8 @@
 				<div class="col-md-10 col-md-offset-1 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<img src="images/Logos/stLogo_Blanco.png" width="25%">
-							<h2>Siempre ayudandote a las necesidades de tu negocio</h2>
+							<h1>Bienvenido</h1>
+							<h2>Te ofrecemos un servicio integral tecnológico el cual te ayuda a que tú negocio este fortalecido con la tecnología</h2>
 						</div>
 					</div>
 				</div>
@@ -78,8 +78,8 @@
 									<i class="icon-eye"></i>
 								</span>
 								<div class="desc">
-									<h3>Consultoria</h3>
-									<p>En Sithec brindamos servicios de consultorias para los productos de compaqi los cuales tambien los puedes adquirir con nosotros.</p>
+									<h3>Consultoría</h3>
+									<p align="justify" style="margin-right:30px">En Sithec brindamos servicios de consultorías para los productos de CONTPAQI los cuales también los puedes adquirir con nosotros.</p>
 								</div>
 							</div>
 						</div>
@@ -90,7 +90,7 @@
 								</span>
 								<div class="desc">
 									<h3>Servicios de TI</h3>
-									<p>Te ayudamos a tener tu información constante y segura en tu organización, ayudandote a que tu trabajo jamas se detenga por problemas tecnicos.</p>
+									<p align="justify" style="margin-right:30px">Te ayudamos a tener tu información constante y segura en tu organización, ayudándote a que tu trabajo jamás se detenga por problemas técnicos.</p>
 								</div>
 							</div>
 						</div>
@@ -101,7 +101,7 @@
 								</span>
 								<div class="desc">
 									<h3>Desarrollo de Software</h3>
-									<p>Desarrollamos Software a tus necesidades, ya sea para que tu empresa funcione de manera sistematizada, crear un nuevo modelo de negocios, etc. Desarrollamos aplicaciones moviles, paginas web y programas de escritorio.</p>
+									<p align="justify" style="margin-right:30px">Desarrollamos Software a tus necesidades, ya sea para que tu empresa funcione de manera sistematizada, crear un nuevo modelo de negocios, etc. Desarrollamos aplicaciones móviles, páginas web y programas de escritorio.</p>
 								</div>
 							</div>
 						</div>
@@ -123,7 +123,7 @@
 						<div class="row">
 							<div class="col-md-12 fh5co-heading animate-box">
 								<h2>¿Por qué nosotros?</h2>
-								<p>Al estar en unión con nosotros tendras bastantes beneficios que te ayudaran a seguir creciendo.</p>
+								<p>Al estar en unión con nosotros tendrás bastantes beneficios que te ayudaran a seguir creciendo.</p>
 							</div>
 						</div>
 						<div class="row">
@@ -139,7 +139,7 @@
 									</span>
 									<div class="feature-copy">
 										<h3>Control</h3>
-										<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+										<p>Te ayudamos a tener toda la información que tienes de forma adecuada y segura.</p>
 									</div>
 								</div>
 
@@ -149,7 +149,7 @@
 									</span>
 									<div class="feature-copy">
 										<h3>Rapidez</h3>
-										<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+										<p>La rapidez de tu información será mejor ya que analizamos lo que en realidad necesites.</p>
 									</div>
 								</div>
 
@@ -158,8 +158,8 @@
 										<i class="icon-check"></i>
 									</span>
 									<div class="feature-copy">
-										<h3>Rapida toma de decisiones</h3>
-										<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
+										<h3>Rápida toma de decisiones</h3>
+										<p>Te damos herramientas para que tomes decisiones de forma rápida y segura.</p>
 									</div>
 								</div>
 							</div>
@@ -205,46 +205,45 @@
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Finished Project</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+					<h2>Proyectos</h2>
+					<p>A continuación te mostraremos algunos de los proyectos que hemos implementado.</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="project">
 					<div class="col-md-8 col-md-push-5 animate-box" data-animate-effect="fadeInLeft">
-						<img class="img-responsive" src="https://assets.rbl.ms/2034496/1200x600.jpg" alt="work">
+						<img class="img-responsive" src="images/maia.jpg" alt="work">
 					</div>
 					<div class="col-md-4 col-md-pull-8 animate-box" data-animate-effect="fadeInRight">
 						<div class="mt">
-							<h3>Real Project For Real Solutions</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. </p>
+							<h3>Maia servicios domésticos</h3>
+							<p>Maia servicios domésticos es una aplicación web la cual te brinda la comodidad de encargar una limpieza a domicilio mediante un pago en la red, en la cual tú conoces todo acerca de quién es la persona que limpiara tu casa además de seleccionar horario y fecha de tu servicio, además de brindarte la oportunidad de trabajar para ellos llenando un formulario y después te contactaran, algunos de los servicios que se implementaron en este sistema son los siguientes</p>
 							<ul class="list-nav">
-								<li><i class="icon-check"></i>Far far away, behind the word</li>
-								<li><i class="icon-check"></i>There live the blind texts</li>
-								<li><i class="icon-check"></i>Separated they live in bookmarksgrove</li>
-								<li><i class="icon-check"></i>Semantics a large language ocean</li>
-								<li><i class="icon-check"></i>A small river named Duden</li>
+								<li><i class="icon-check"></i>Control de tu servicio</li>
+								<li><i class="icon-check"></i>Pago en la nube</li>
+								<li><i class="icon-check"></i>Dashboards para la toma de decisiones</li>
+								<li><i class="icon-check"></i>Atractividad en el mercado</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="project">
 					<div class="col-md-8 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
-						<img class="img-responsive" src="images/work_1.png" alt="work">
+						<img class="img-responsive" src="images/manos.jpg" alt="work">
 					</div>
 					<div class="col-md-4 animate-box" data-animate-effect="fadeInRight">
 						<div class="mt">
 							<div>
-								<h4><i class="icon-user"></i>Real Project For Real Solutions</h4>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+								<h4><i class="icon-user"></i>Proyectos de software</h4>
+								<p>Desarrollamos software en Aguascalientes y Jalisco principalmente, además de que les brindamos la seguridad de que el mantenimiento de estas son las 24 horas del día. </p>
 							</div>
 							<div>
-								<h4><i class="icon-video2"></i>Real Project For Real Solutions</h4>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+								<h4><i class="icon-user"></i>Proyectos de redes</h4>
+								<p>Hemos implementado redes para empresas completas en las cuales hasta la fecha no se ha tenido ningún problema de fallos. </p>
 							</div>
 							<div>
-								<h4><i class="icon-shield"></i>Real Project For Real Solutions</h4>
-								<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+								<h4><i class="icon-user"></i>Negocios atendidos por nosotros</h4>
+								<p>Tenemos atendidos a más de 20 negocios asegurándonos de que su trabajo nunca se detenga, además de brindarles el software que ellos necesitan. </p>
 							</div>
 						</div>
 					</div>

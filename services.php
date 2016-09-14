@@ -71,58 +71,76 @@
 		<div class="container">
 			<div class="col-md-4 col-sm-4">
 				<div class="feature-center">
-					<span class="icon">
-						<i class="icon-eye"></i>
+					<span class="icon" style="background-color:#ffffff">
+					<div class="fh5co-staff">
+						<img src="images/app.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
+						
+					</div>
 					</span>
 
-					<h3>Desarrollo de aplicaciones moviles</h3>
-					<p>Te ayudamos a llevar a cabo tu idea mediante la elaboración de aplicaciones moviles tanto para Android como para IOs</p>
+					<h3>Desarrollo de aplicaciones móviles</h3>
+					<p>Te ayudamos a llevar a cabo tu idea mediante la elaboración de aplicaciones móviles tanto para Android como para IOS</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4">
 				<div class="feature-center">
-					<span class="icon">
-						<i class="icon-command"></i>
+					<span class="icon" style="background-color:#ffffff">
+					<div class="fh5co-staff">
+						<img src="images/web.png" alt="Free HTML5 Templates by FreeHTML5.co">
+						
+					</div>
 					</span>
-					<h3>Desarrollo de pagínas web</h3>
-					<p>Desarrollamos la pagína web que necesitas desde una pagina corporativa hasta un sistema web avanzado.</p>
+					<h3>Desarrollo de páginas web</h3>
+					<p>Desarrollamos la página web que necesitas desde una página corporativa hasta un sistema web avanzado.</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4">
 				<div class="feature-center">
-					<span class="icon">
-						<i class="icon-power"></i>
+					<span class="icon" style="background-color:#ffffff">
+					<div class="fh5co-staff">
+						<img src="images/escri.jpg" >
+						
+					</div>
 					</span>
 					<h3>Desarrollo de aplicaciones de escritorio</h3>
-					<p>Te ayudamos a tener el control de tu negocio mediante una aplicacion de escritorio que tu ncesitas como por ejemplo tu inventario y punto de venta.</p>
+					<p>Te ayudamos a tener el control de tu negocio mediante una aplicación de escritorio que tú necesitas como por ejemplo tu inventario y punto de venta.</p>
 				</div>
 			</div>
 
 			<div class="col-md-4 col-sm-4">
 				<div class="feature-center">
-					<span class="icon">
-						<i class="icon-brush"></i>
+					<span class="icon" style="background-color:#ffffff">
+					<div class="fh5co-staff">
+						<img src="images/imple.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
+						
+					</div>
 					</span>
 					<h3>Implementación de Redes</h3>
-					<p>Nos encargamos de diseñar las redes que tu empresa necesita para estar interconectados para realizar su trabajo sin ningun problema.</p>
+					<p>Nos encargamos de diseñar las redes que tu empresa necesita para estar interconectados para realizar su trabajo sin ningún problema.</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4">
 				<div class="feature-center">
-					<span class="icon">
-						<i class="icon-video2"></i>
+					<span class="icon" style="background-color:#ffffff">
+					<div class="fh5co-staff">
+						<img src="images/mante.png" alt="Free HTML5 Templates by FreeHTML5.co">
+						
+					</div>
 					</span>
 					<h3>Mantenimiento de redes</h3>
-					<p>Estamos al tanto de el estado de las redes de tu empresa mediante las mas avanzadas practicas.</p>
+					<p>Estamos al tanto del estado de las redes de tu empresa mediante las más avanzadas prácticas.</p>
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4">
 				<div class="feature-center">
-					<span class="icon">
-						<i class="icon-help2"></i>
+					<span class="icon" style="background-color:#ffffff">
+					<div class="fh5co-staff">
+						<img src="images/contpa.png" alt="Free HTML5 Templates by FreeHTML5.co">
+						
+					</div>
 					</span>
-					<h3>Software contable compaqi</h3>
-					<p>Te brindamos el Software que necesitas en tu empresa mediante la distribución de los software de compaqi.</p>
+					<h3>Software contable CONTPAQi</h3>
+					<p>Te brindamos el Software que necesitas en tu empresa mediante la distribución de los softwares de CONTPAQi.</p>
 
 				</div>
 			</div>
