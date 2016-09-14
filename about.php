@@ -118,7 +118,7 @@
 						</ul>
 					</div>
 				</div>
-				<!-- <div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
+				 <div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
 					<div class="fh5co-staff">
 						<img src="images/staff/hector.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
 						<h3>Hector Daniel Holguin Lopez</h3>
@@ -129,7 +129,7 @@
 							<li><a href="https://github.com/mangelhdz"><i class="icon-github"></i></a></li>
 						</ul>
 					</div>
-				</div>-->
+				</div>
 			</div>
 		</div>
 	</div>

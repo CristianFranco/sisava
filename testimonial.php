@@ -107,28 +107,28 @@
 				<div class="col-md-4 animate-box">
 					<div class="testimony">
 						<blockquote>
-							&ldquo;En la empresa teníamos un problema muy grande, la cantidad de información que teníamos que procesar al día era inmensa. Alguien nos habló de Sithec y de como podíamos pedir un sistema desde su plataforma en linea, la verdad nunca he quedado más satisfecho.&rdquo;<br>
+							&ldquo;En alguna ocasión nos instalaron una red en el negocio, no le habíamos dado mantenimiento en varios años, por lo que ya no funcionaba correctamente. Gracias a los servicios de Sithec, hoy en día la red funciona mucho mejor que cuando la instalaron por primera vez.&rdquo;<br>
 							<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
 						</blockquote>
-						<p class="author"><cite>Juan García</cite></p>
+						<p class="author"><cite>Enrique López</cite></p>
 					</div>
 				</div>
 				<div class="col-md-4 animate-box">
 					<div class="testimony">
 						<blockquote>
-							&ldquo;Era demasiado urgente para mi contar con un paquete de contabilidad en mi empresa. Utilizando los servicios en linea de Sithec me fue muy sencillo conseguirlo, además ellos se encargaron de todo.&rdquo;<br>
+							&ldquo;Teníamos una idea, poder crear un negocio de servicio de limpieza. Gracias al apoyo de Sithec pudimos alcanzar nuestro sueño, no sólo nos apoyaron con la creación del sistema Maia, sino a desarrollar nuestra idea.&rdquo;<br>
 							<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
 						</blockquote>
-						<p class="author"><cite>Roberto Aguilar</cite></p>
+						<p class="author"><cite>Ivonne Díaz Alba</cite></p>
 					</div>
 				</div>
 				<div class="col-md-4 animate-box">
 					<div class="testimony">
 						<blockquote>
-							&ldquo;Un servicio excelente de parte de Sithec, la instalación de la red en mi negocio ha sido todo un éxito. La verdad es que los recomiendo ampliamente&rdquo;<br>
+							&ldquo;Sithec nos ayudo a desarrollar una aplicación para utilizar una tarjeta que contiene descuentos para múltiples establecimientos.&rdquo;<br>
 							<i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i>
 						</blockquote>
-						<p class="author"><cite>Susana Montenegro</cite></p>
+						<p class="author"><cite>Francisco González</cite></p>
 					</div>
 				</div>
 			</div>
