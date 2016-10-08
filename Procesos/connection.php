@@ -1,9 +1,9 @@
-s<?PHP            
+<?PHP            
     function connect(){
-        $servername = "107.180.58.59";
-        $username = "adminRCO";
-        $password = "StrUsr94?";
-        $database = "RCO";
+        $servername = "107.180.108.30";
+        $username = "adminSithec";
+        $password = "Admin\$A2016";
+        $database = "sithecdb";
         $conn = new mysqli($servername, $username, $password, $database);
         
         if(mysqli_connect_errno()){
