@@ -10,8 +10,7 @@
     $query="select * from categoria;";
     $result=$connection -> query($query);
     while($row=$result->fetch_array(MYSQLI_ASSOC)){
-        echo "$row[Nombre]";
-
+        echo "<a href=\"catalogo.php?categoria=$row[IdCategory]\">$row[Nombre]</a> <br />";
     }
 ?>
 </body>
