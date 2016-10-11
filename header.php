@@ -29,30 +29,14 @@
 	<link rel="stylesheet" href="css/magnific-popup.css">
 
 	<!-- Theme style  -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-modal.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+    <link rel="stylesheet" type="text/css" href="css/style-meter.css" />
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script>
-        $(document).ready(function(){
-            var pathname=window.location.pathname;
-            var array=pathname.split('/');
-            if(array[2]=="index.php"){
-                $("#index").addClass("active");
-            }else if(array[2]=="about.php"){
-                $("#about").addClass("active");
-            }else if(array[2]=="services.php"){
-                $("#services").addClass("active");
-            }else if(array[2]=="benefits.php"){
-                $("#benefits").addClass("active");
-            }else if(array[2]=="testimonial.php"){
-                $("#testimonial").addClass("active");
-            }else if(array[2]=="contact.php"){
-                $("#contact").addClass("active");
-            }
-        })    
-    </script>
+    
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -65,7 +49,7 @@
                     <div class="col-xs-2">
                         <div id="fh5co-logo"><a href="index.php"><img src="images/Logos/stLogo_Blanco.png" width="80%"></a></div>
                     </div>
-                    <div class="col-xs-10 text-right menu-1">
+                    <div class="col-xs-8 text-right menu-1">
                         <ul>
                             <li id="index"><a href="index.php">Inicio</a></li>
                             <li id="about"><a href="about.php">Conocenos</a></li>
@@ -75,9 +59,83 @@
                             <li id="contact"><a href="contact.php">Contactanos</a></li>
                         </ul>
                     </div>
+                    <div class="col-xs-1">
+                        <button id="lin" class="btn btn-primary">LogIn</button>
+                    </div>
+                    <div class="col-xs-1">
+                        <button id="sup" class="btn btn-primary">SignUp</button>
+                    </div>
                 </div>
-
+                
             </div>
         </nav>
+        <div id="dialog" class="modal">
+            <section>
+                <div id="container_demo" >
+                    
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        <div id="login" class="animate form">
+                            <a id="closeLin" href="#close" title="Close" class="close">X</a>
+                            <form  action="mysuperscript.php" autocomplete="on"> 
+                                <h1>Iniciar Sesión</h1> 
+                                <p> 
+                                    <label for="username" class="uname" data-icon="u" > Tu correo o usuario </label>
+                                    <input id="username" name="username" required="required" type="text"/>
+                                </p>
+                                <p> 
+                                    <label for="password" class="youpasswd" data-icon="p"> Tu contraseña </label>
+                                    <input id="password" name="password" required="required" type="password"/> 
+                                </p>
+                                <p> 
+                                    <input type="submit" value="Login" class="btn btn-primary"/> 
+                                </p>
+                                <p class="change_link">
+                                    ¿Aún no estás registrado?
+                                    <a href="#toregister" class="to_register">Crea una cuenta</a>
+                                </p>
+                            </form>
+                        </div>
+                        <div id="register" class="animate form">
+                            <a id="closeSup" href="#close" title="Close" class="close">X</a>
+                            <form action="signup.php" method="post"  id="signupForm" autocomplete="on"> 
+                                <h1> Crear una cuenta </h1> 
+                                <p> 
+                                    <label for="usernamesignup" class="uname" data-icon="u">Usuario</label>
+                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" />
+                                </p>
+                                <p> 
+                                    <label for="emailsignup" class="youmail" data-icon="e" > Correo</label>
+                                    <input id="emailsignup" name="emailsignup" required="required" type="email" /> 
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Contraseña </label>
+                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password"/>
+                                    <meter max="4" id="password-strength-meter"></meter>
+                                    <b id="password-strength-text"></b>
+                                </p>
+                                <p> 
+                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Confirmar Contraseña </label>
+                                    <input type="password" id="passwordsignup_confirm" name="passwordsignup_confirm" required="required"/>
+                                </p>
+                                <p> 
+									<input id="signup" type="submit" value="Sign up" class="btn btn-primary"/> 
+								</p>
+                                <p class="change_link">  
+									¿Ya tienes una cuenta?
+									<a href="#tologin" class="to_register"> Inicia Sesión </a>
+								</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+	<script src=js/header.js></script>
 </html>

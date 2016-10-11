@@ -1412,8 +1412,8 @@ form label {
   border: 2px solid #334256;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background: #64d194 !important;
-  border-color: #64d194 !important;
+  background: rgb(151, 181, 247) !important;
+  border-color: rgb(151, 181, 247) !important;
 }
 .btn-primary.btn-outline {
   background: transparent;
