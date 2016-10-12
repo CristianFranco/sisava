@@ -15,10 +15,10 @@
         /*if($_SESSION["Nombre"]==""){
             echo json_encode(array('status'=>'noData','msg'=>'No ha completado el registro'));
             exit();
-        }*/if{
+        }*/
             echo json_encode(array('status'=>'success','msg'=>'Inicio de Sesión Exitoso'));
             exit();   
-        }
+        
     }else{
         echo json_encode(array('status'=>'error','msg'=>'Usuario o Contraseña Invalidos'));
         exit();

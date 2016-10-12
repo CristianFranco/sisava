@@ -88,6 +88,10 @@
 	  ?>
     </ol>
 
+
+
+
+
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
 
@@ -117,13 +121,20 @@
 </div>
 
 
+
+<?php 
+	echo "<input type=\"text\" id=\"idProduct\" value=\"".$producto["IdProducto"]."\" hidden=\"true\">";
+ ?>
+
 <?php 
 	echo "Precio: $".$producto["Precio"]."<br />";
 	echo "Precio de instalación: $".$producto["PrecioInstalacion"]."<br />";
 	echo "Duración de la instalación: ".$producto["tiempoInstalacion"]." hrs<br />";
 ?>
 
-<input type="submit" value="Agregar al carrito">
+Cantidad: <input type="number" name="cantidad" id="cantidad">
+
+<input type="submit" id="btnSubmit" value="Agregar al carrito">
 
 <!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -138,6 +149,7 @@
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
+	<script type="text/javascript" src="./js/jsApiConsumer/altaVenta.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
 </body>

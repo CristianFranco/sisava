@@ -6,7 +6,7 @@
 <body>
 
 <?php
-require("/Procesos/connection.php");
+	require("/Procesos/connection.php");
 
 	$connection=connect();
 
