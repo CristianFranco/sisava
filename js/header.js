@@ -86,17 +86,28 @@ $(document).ready(function(){
     password.onchange = validatePassword;
     confirm_password.onkeyup = validatePassword;
     
-    /*//Registrarse
-    $("#signup").click(function(){
-      var data=$("#signupForm").serialize();
-      $.post("signup.php",data);
-   });*/
-    
+    //Funciones Inicio de Sesión
+    $("#loginForm").submit(function(e){
+        e.preventDefault();
+        $data=$(this).serialize();
+        $.ajax({
+            url: 'login.php',
+            data: $data,
+            method: "POST",
+            success: function(data){
+                var dato=JSON.parse(data);
+                if(dato["status"]=='success'){
+                    window.location.href="index.php";
+                }else if(dato["status"]=='noData'){
+                    window.location.href="modificarPerfil.php";
+                }else{
+                    $("#incorrect").html(dato["msg"]);
+                }
+            },
+        });
+    });
 });
-
-/*jQuery(document).ready(function(){
-   $("#signup").click(function(){
-      var data=$("#signupForm").serialize();
-      $.post("signup.php",data);
-   });
-});*/
+//Log Out
+function logOut(){
+   window.location.href="logout.php"; 
+};

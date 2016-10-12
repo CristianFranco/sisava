@@ -53,6 +53,7 @@
             echo('<p>Error: '.$mail->ErrorInfo.'</p>');
         } else {
             header("Location: revisaCorreo.php");
+            exit();
         }
     ?>
 </body>

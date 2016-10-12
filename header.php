@@ -1,4 +1,7 @@
 <!DOCTYPE HTML>
+<?php
+    session_start();
+?>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -43,12 +46,16 @@
 	<![endif]-->
 	</head>
 	<body >
+        
         <nav class="fh5co-nav" role="navigation">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-2">
                         <div id="fh5co-logo"><a href="index.php"><img src="images/Logos/stLogo_Blanco.png" width="80%"></a></div>
                     </div>
+    <?php
+        if(!isset($_SESSION["Logged"])){              
+    ?>
                     <div class="col-xs-8 text-right menu-1">
                         <ul>
                             <li id="index"><a href="index.php">Inicio</a></li>
@@ -65,6 +72,23 @@
                     <div class="col-xs-1">
                         <button id="sup" class="btn btn-primary">SignUp</button>
                     </div>
+    <?php
+        }else{
+    ?>
+                   <div class="col-xs-8 text-right menu-1">
+                        <ul>
+                            <li id="index"><a href="index.php">Inicio</a></li>
+                            <li id="services"><a href="services.php">Productos y Servicios</a></li>
+                            <li id="testimonial"><a href="testimonial.php">Clientes</a></li>
+                            <li id="contact"><a href="contact.php">Contactanos</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-1">
+                        <button id="lout" onclick="logOut();" class="btn btn-primary">LogOut</button>
+                    </div>
+    <?php
+        }
+    ?>
                 </div>
                 
             </div>
@@ -78,7 +102,7 @@
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <a id="closeLin" href="#close" title="Close" class="close">X</a>
-                            <form  action="mysuperscript.php" autocomplete="on"> 
+                            <form id="loginForm" method="post"  action="login.php" autocomplete="on"> 
                                 <h1>Iniciar Sesión</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" > Tu correo o usuario </label>
@@ -88,6 +112,7 @@
                                     <label for="password" class="youpasswd" data-icon="p"> Tu contraseña </label>
                                     <input id="password" name="password" required="required" type="password"/> 
                                 </p>
+                                <p><b id="incorrect"></b></p>
                                 <p> 
                                     <input type="submit" value="Login" class="btn btn-primary"/> 
                                 </p>
