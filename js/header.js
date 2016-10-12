@@ -99,7 +99,7 @@ $(document).ready(function(){
                 if(dato["status"]=='success'){
                     window.location.href="index.php";
                 }else if(dato["status"]=='noData'){
-                    window.location.href="modificarPerfil.php";
+                    window.location.href="index.php";
                 }else{
                     $("#incorrect").html(dato["msg"]);
                 }

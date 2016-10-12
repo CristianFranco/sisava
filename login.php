@@ -8,10 +8,9 @@
     $response_array=array();
     if($rows->num_rows>0){
         session_start();
-        $result=$row->fetch_array(MYSQLI_ASSOC);
+        $result=$rows->fetch_array(MYSQLI_ASSOC);
         $_SESSION["Usuario"]=$user;
-        $_SESSION["Nombre"]=$result[Nombre];
-        echo $_SESSION["Nombre"];
+        $_SESSION["Nombre"]=$result['Nombre'];
         /*if($_SESSION["Nombre"]==""){
             echo json_encode(array('status'=>'noData','msg'=>'No ha completado el registro'));
             exit();
