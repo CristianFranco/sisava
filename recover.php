@@ -1,7 +1,46 @@
 <?php
-    session_start();
+    require("./Procesos/connection.php");
+    require("./Procesos/PHPMailer/PHPMailerAutoload.php");
+    $connection=connect();
+    $email=$_POST["emailForget"];
+    $query="select Hash from usuario where Email='".$email."';";
+    $result=$connection->query($query);
+    if($result->num_rows>0){
+        $row=$result->fetch_array(MYSQLI_ASSOC);
+        $hash=$row["Hash"];
+    }else{
+        $hash="";
+    }
+    $activateLink=md5($email . $hash);
+    $from ="noreplysithec@gmail.com";
+    $subject="Pasos para recuperar tu contraseña";
+    $message='
+    1.-Haz clic en el siguiente enlace localhost/Sithec/changePassword.php?activateCode='. $activateLink .'
+    2.-Introduce en los campos tu nueva contraseña.
+    3.-Haz clic en el boton "Cambiar Contraseña"
+    4.-Podras iniciar sesión nuevamente.
+    ';
+    $mail=new PHPMailer();
+    $mail->IsSMTP();
+    $mail->Host="smtp.gmail.com";
+    $mail->SMTPDebug=0;
+    $mail->SMTPAuth=true;
+    $mail->SMTPSecure="tls";
+    $mail->Port=587;
+    $mail->Username="noreplysithec@gmail.com";
+    $mail->Password='Admin$A2016';
+    $mail->SetFrom('noreplysithec@gmail.com',"Sithec NoReply");
+    $mail->AddAddress($email);
+    $mail->Subject=$subject;
+    $mail->MsgHTML($message);
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
 ?>
-<!DOCTYPE HTML>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -62,8 +101,7 @@
 				<div class="col-md-10 col-md-offset-1 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>¡Felicidades!</h1>
-							<h2>Tu cuenta ha sido creada con éxito, el último paso es activarla. Revisa tu bandeja de entrada por favor</h2>
+							<h1>Sigue las instrucciones enviadas a tu correo para poder cambiar tu contraseña</h1>
 						</div>
 					</div>
 				</div>
@@ -100,4 +138,3 @@
 
 	</body>
 </html>
-

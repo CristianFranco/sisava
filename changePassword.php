@@ -1,5 +1,14 @@
 <?php
-    session_start();
+    require("./Procesos/connection.php");
+    $connection=connect();
+    $activateCode=$_GET["activateCode"];
+    $query="select * from usuario where md5(concat(Email,Hash))='".$activateCode."';";
+    $row=$connection->query($query);
+    if($row->num_rows<1){
+        header("Location: index.php");
+    }
+    $result=$row->fetch_array(MYSQLI_ASSOC);
+    $email=$result['Email'];
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -49,28 +58,55 @@
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
-	<div>
-       <?php
-            require('header.php');
-        ?>
+    <div>
+    <?php
+        require('header.php');
+    ?>
     </div>
-
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/stLogo_Color.jpg);">
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/stLogo_Color.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-10 col-md-offset-1 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>¡Felicidades!</h1>
-							<h2>Tu cuenta ha sido creada con éxito, el último paso es activarla. Revisa tu bandeja de entrada por favor</h2>
+							<h1>Cambiar Contraseña</h1>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
-	
+	<div class="fh5co-section">
+		<div class="container">
+			<div class="row">
+                <div class="col-md-3"></div>
+				<div class="col-md-6 animate-box">
+					<h3>Ingresa tu nueva contraseña</h3>
+					<form action="./Procesos/modificarContrasena.php" method="post">
+                        <input type="hidden" name="email" id="email" value="<?php echo $email; ?>">
+                        <div class="row form-group">
+							<div class="col-md-12">
+								<label for="pwd">Nueva Contraseña</label>
+								<input required type="password" name="pwd" id="pwd" class="form-control" placeholder="Contraseña">
+                                <meter max="4" id="passwordmeter"></meter>
+							</div>
+						</div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+								<label for="pwdconf">Confirmar Contraseña</label>
+								<input required type="password" name="pwdconf" id="pwdconf" class="form-control" placeholder="Confirmar Contraseña">
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Cambiar Contraseña" class="btn btn-primary">
+						</div>
+
+					</form>		
+				</div>
+            </div>
+		</div>
+	</div>
 	<div>
 	    <?php
             require('footer.php');
@@ -97,7 +133,6 @@
 	<script src="js/magnific-popup-options.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
-
+    <script src="js/modificarPerfil.js"></script>
 	</body>
 </html>
-

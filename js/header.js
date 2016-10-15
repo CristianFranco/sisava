@@ -22,6 +22,7 @@ $(document).ready(function(){
     var linModal=document.getElementById("dialog");
     var closeLin=document.getElementById("closeLin");
     var closeSup=document.getElementById("closeSup");
+    var closeForget=document.getElementById("closeForget");
     linBtn.onclick=function(){
         var url=location.href;
         location.href="#tologin";
@@ -42,6 +43,9 @@ $(document).ready(function(){
         linModal.style.display="none";
     }
     closeSup.onclick=function(){
+        linModal.style.display="none";
+    }
+    closeForget.onclick=function(){
         linModal.style.display="none";
     }
     
@@ -91,14 +95,12 @@ $(document).ready(function(){
         e.preventDefault();
         $data=$(this).serialize();
         $.ajax({
-            url: 'login.php',
+            url: './Procesos/login.php',
             data: $data,
             method: "POST",
             success: function(data){
                 var dato=JSON.parse(data);
                 if(dato["status"]=='success'){
-                    window.location.href="index.php";
-                }else if(dato["status"]=='noData'){
                     window.location.href="index.php";
                 }else{
                     $("#incorrect").html(dato["msg"]);
@@ -106,8 +108,29 @@ $(document).ready(function(){
             },
         });
     });
+    
+    //Funciones Menu Sesión
+    
+
+    
 });
 //Log Out
 function logOut(){
-   window.location.href="logout.php"; 
+   window.location.href="./Procesos/logout.php"; 
 };
+function myFunction(event) {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+window.onclick = function(event) {
+  if (!event.target.matches('#dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}

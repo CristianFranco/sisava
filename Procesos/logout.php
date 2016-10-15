@@ -5,5 +5,5 @@
     $_SESSION["Usuario"]="";
     $_SESSION["Logged"]="";
     echo($_SESSION["Usuario"]);
-    header("Location: index.php");
+    header("Location: ../index.php");
 ?>

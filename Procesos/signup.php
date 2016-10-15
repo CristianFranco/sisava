@@ -4,8 +4,8 @@
 </head>
 <body>
 	<?php
-        require("./Procesos/connection.php");
-        require("./Procesos/PHPMailer/PHPMailerAutoload.php");
+        require("connection.php");
+        require("./PHPMailer/PHPMailerAutoload.php");
         $connection=connect();
         $uname=$_POST["usernamesignup"];
         $email=$_POST["emailsignup"];
@@ -26,7 +26,7 @@
         ------------------------
 
         Por favor haz clic en el siguiente enlace para completar el registro:
-        localhost/Sithec/verify.php?activateCode='. $activateLink .'
+        localhost/Sithec/Procesos/verify.php?activateCode='. $activateLink .'
 
         ';
         $mail=new PHPMailer();

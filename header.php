@@ -1,13 +1,9 @@
 <!DOCTYPE HTML>
-<?php
-    session_start();
-?>
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>SITHEC</title>
-
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
@@ -72,37 +68,17 @@
                     <div class="col-xs-1">
                         <button id="sup" class="btn btn-primary">SignUp</button>
                     </div>
-    <?php
-        }else{
-    ?>
-                   <div class="col-xs-8 text-right menu-1">
-                        <ul>
-                            <li id="index"><a href="index.php">Inicio</a></li>
-                            <li id="services"><a href="services.php">Productos y Servicios</a></li>
-                            <li id="testimonial"><a href="testimonial.php">Clientes</a></li>
-                            <li id="contact"><a href="contact.php">Contactanos</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-1">
-                        <button id="lout" onclick="logOut();" class="btn btn-primary">LogOut</button>
-                    </div>
-    <?php
-        }
-    ?>
-                </div>
-                
-            </div>
-        </nav>
-        <div id="dialog" class="modal">
+                    <div id="dialog" class="modal">
             <section>
                 <div id="container_demo" >
                     
                     <a class="hiddenanchor" id="toregister"></a>
                     <a class="hiddenanchor" id="tologin"></a>
+                    <a class="hiddenanchor" id="toforget"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <a id="closeLin" href="#close" title="Close" class="close">X</a>
-                            <form id="loginForm" method="post"  action="login.php" autocomplete="on"> 
+                            <form id="loginForm" method="post"  action="./Procesos/login.php" autocomplete="on"> 
                                 <h1>Iniciar Sesión</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" > Tu correo o usuario </label>
@@ -111,6 +87,9 @@
                                 <p> 
                                     <label for="password" class="youpasswd" data-icon="p"> Tu contraseña </label>
                                     <input id="password" name="password" required="required" type="password"/> 
+                                </p>
+                                <p>
+                                    <a href="#toforget">Olvide mi contraseña</a>
                                 </p>
                                 <p><b id="incorrect"></b></p>
                                 <p> 
@@ -124,7 +103,7 @@
                         </div>
                         <div id="register" class="animate form">
                             <a id="closeSup" href="#close" title="Close" class="close">X</a>
-                            <form action="signup.php" method="post"  id="signupForm" autocomplete="on"> 
+                            <form action="./Procesos/signup.php" method="post"  id="signupForm" autocomplete="on"> 
                                 <h1> Crear una cuenta </h1> 
                                 <p> 
                                     <label for="usernamesignup" class="uname" data-icon="u">Usuario</label>
@@ -153,10 +132,63 @@
 								</p>
                             </form>
                         </div>
+                        <div id="forget" class="animate form">
+                            <a id="closeForget" href="#close" title="Close" class="close">X</a>
+                            <form id="forgetForm" method="post"  action="recover.php" autocomplete="on"> 
+                                <h1>Recuperar Contraseña</h1> 
+                                <p> 
+                                    <label for="emailForget" class="uname" data-icon="e" > Tu correo </label>
+                                    <input id="emailForget" name="emailForget" required="required" type="text"/>
+                                </p>
+                                <p> 
+                                    <input type="submit" value="Recuperar Contraseña" class="btn btn-primary"/> 
+                                </p>
+                                <p class="change_link">
+                                    <a href="#tologin" class="to_register"> Inicia Sesión </a>
+                                </p>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
+    <?php
+        }else{
+    ?>
+                   <div class="col-xs-8 text-right menu-1">
+                        <ul>
+                            <li id="index"><a href="index.php">Inicio</a></li>
+                            <li id="services"><a href="services.php">Productos y Servicios</a></li>
+                            <li id="testimonial"><a href="testimonial.php">Clientes</a></li>
+                            <li id="contact"><a href="contact.php">Contactanos</a></li>
+                            
+                            
+                        </ul>
+                    </div>
+                    <div class="col-xs-2 text-right menu-1">
+                        <div id="dropdown" name="dropdown" class="dropdown">
+                          <button onclick="myFunction(event);" class="dropbtn" id="dropbtn"><?php echo $_SESSION["Usuario"];?></button>
+                          <div id="myDropdown" class="dropdown-content">
+                            <a href="modificarPerfil.php">Mi Perfil</a>
+                            <a onclick="logOut();">Log Out</a>
+                          </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-xs-1">
+                        <div class="dropdown">
+                          <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                          <div id="myDropdown" class="dropdown-content">
+                            <a href="#">Mi Perfil</a>
+                            <a href="#">Log Out</a>
+                          </div>
+                        </div>
+                    </div>-->
+    <?php
+        }
+    ?>
+                </div>  
+            </div>
+        </nav>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
