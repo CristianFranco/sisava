@@ -158,7 +158,7 @@
                    <div class="col-xs-8 text-right menu-1">
                         <ul>
                             <li id="index"><a href="index.php">Inicio</a></li>
-                            <li id="services"><a href="services.php">Productos y Servicios</a></li>
+                            <li id="services"><a href="producto.php">Comprar Productos</a></li>
                             <li id="testimonial"><a href="testimonial.php">Clientes</a></li>
                             <li id="contact"><a href="contact.php">Contactanos</a></li>
                             

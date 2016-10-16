@@ -1,0 +1,139 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+/*-- Variables --*/
+/*-- Placeholder --*/
+
+/*-- Pagination --*/
+.pgn {
+  width: 100%;
+  border-top: 3px solid #fff;
+  clear: both;
+}
+.pgn li {
+  float: left;
+}
+.pgn a,
+.pgn span,
+.pgn strong {
+  float: left;
+  text-align: center;
+  padding-top: 20px;
+  color: #313868;
+}
+@media screen and (min-width: 48em) {
+  .pgn a,
+  .pgn span,
+  .pgn strong {
+    display: block;
+  }
+}
+.pgn a {
+  text-decoration: none;
+}
+.pgn .prev,
+.pgn .next {
+  width: 33.33333%;
+}
+@media screen and (min-width: 37.5em) {
+  .pgn .prev,
+  .pgn .next {
+    width: 20%;
+  }
+}
+.pgn .prev a,
+.pgn .next a {
+  display: block;
+  width: 100%;
+}
+.pgn .prev {
+  float: left;
+}
+.pgn .prev a {
+  text-align: left;
+}
+.pgn .next {
+  float: right;
+}
+.pgn .next a {
+  text-align: right;
+}
+
+/* <ul> */
+.pgn__list {
+  width: 100%;
+  position: relative;
+  top: -3px;
+}
+
+/* <li> - pagination numbers */
+.pgn__item {
+  width: 33.33333%;
+}
+@media screen and (min-width: 48em) {
+  .pgn__item {
+    width: calc(100% - 230px);
+  }
+}
+.pgn__item a,
+.pgn__item span,
+.pgn__item strong {
+  display: none;
+  text-align: center;
+  width: 100%;
+}
+.pgn__item a.current,
+.pgn__item span.current,
+.pgn__item strong.current {
+  display: block;
+}
+@media screen and (min-width: 37.5em) {
+  .pgn__item a {
+    display: block;
+  }
+}
+
+/* prev/next icon */
+.pgn__prev-icon,
+.pgn__next-icon {
+  margin-top: 1px;
+}
+.disabled .pgn__prev-icon, .disabled
+.pgn__next-icon {
+  color: #bec2d8;
+}
+
+.fullprevnext .pgn__prev-icon {
+  float: left;
+}
+
+.fullprevnext .pgn__next-icon {
+  float: right;
+}
+
+/* prev/next text */
+.pgn__prev-txt,
+.pgn__next-txt {
+  display: none;
+}
+.disabled .pgn__prev-txt, .disabled
+.pgn__next-txt {
+  color: #bec2d8;
+}
+.fullprevnext .pgn__prev-txt, .fullprevnext
+.pgn__next-txt {
+  display: inline-block;
+  padding-top: 0;
+}
+
+.fullprevnext .pgn__prev-txt {
+  float: left;
+}
+
+.fullprevnext .pgn__next-txt {
+  float: right;
+}
+
+.pgn__magic-line {
+  background-color: #313868;
+  position: absolute;
+  height: 3px;
+}

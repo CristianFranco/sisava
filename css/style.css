@@ -1614,7 +1614,7 @@ input[type='radio']:checked:before {
     font-size: 14px;
     height: 30px;
     width: 110px;
-    border: rgb(228, 236, 255) solid ;
+    border: rgb(228, 236, 255);
     cursor: pointer;
 }
 
@@ -1650,3 +1650,149 @@ input[type='radio']:checked:before {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+/*Productos*/
+.category{
+    background-color: rgb(248, 248, 248);
+    height: 100vh;
+}
+.category h2{
+    color:black;
+    border-bottom: 2px solid #d4d4d4;
+    width: 95%;
+}
+.category ul{
+    padding: 0;
+    list-style-type: none;
+    font-size: 18px;
+}
+.category li{
+    -webkit-transition: background 0.5s, border 0.5s; /* Safari */
+    transition: background 0.5s, border 0.5s;
+}
+.category li:hover{
+    background: rgba(151, 181, 247,0.2);
+    border-left: 5px solid #37527a;
+}
+
+
+.product{
+   perspective: 1000px;
+   transform-style: preserve-3d;
+    transition: 0.6s;
+    height: 350px;
+}
+.product:hover .back {
+    transform: rotateY(0deg);
+}
+.product:hover .front {
+    transform: rotateY(180deg);
+}
+.front, .back {
+	backface-visibility: hidden;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+    height: 350px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.back {
+    height: 100%;
+	transform: rotateY(-180deg);
+}
+.addToCart{
+    position: inherit;
+}
+
+.button {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 120px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  padding: 0 20px 0 73px;
+  border: none;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  font: normal 14px/1.6 "Open Sans", Helvetica, sans-serif;
+  color: rgba(255,255,255,0.9);
+  text-transform: capitalize;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgb(105,192,223);
+  -webkit-box-shadow: 0 5px 0 0 rgb(87,151,180) ;
+  box-shadow: 0 5px 0 0 rgb(87,151,180) ;
+  text-shadow: 0 1px 1px rgba(87,151,180,0.36) ;
+  -webkit-transition: top 50ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: top 50ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: top 50ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: top 50ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.button:hover {
+  font: normal 16px/1.6 "Open Sans", Helvetica, sans-serif;
+  background: rgba(78,182,216,1);
+  -webkit-box-shadow: 0 5px 0 0 rgba(78,136,160,1) ;
+  box-shadow: 0 5px 0 0 rgba(78,136,160,1) ;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.button:active {
+  top: 0px;
+  background: rgb(105,192,223)	;
+  -webkit-box-shadow: 0 3px 0 0 rgba(78,136,160,1) ;
+  box-shadow: 0 3px 0 0 rgba(78,136,160,1) ;
+  -webkit-transform-origin: 50% 100% 0;
+  transform-origin: 50% 100% 0;
+}
+
+.button::before {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  content: "";
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  border: 0 solid #018dc4;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  font: normal medium/normal Arial, Helvetica, sans-serif;
+  color: rgba(0,0,0,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: url("../images/carticon.png"), rgba(0,0,0,0.05);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  -webkit-background-origin: content-box;
+  background-origin: content-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 30px auto;
+  background-size: 30px auto;
+  text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.quantity{
+    width: 70px;
+}
