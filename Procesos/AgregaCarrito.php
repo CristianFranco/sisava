@@ -4,7 +4,7 @@ require("connection.php");
 	$connection=connect();
 
  	session_start();
-    $Uid= 1;//$_SESSION['idUsuario'];
+    $Uid = $_SESSION["IdUser"];//$_SESSION['idUsuario'];
 
 	$idProducto = $_POST['producto'];
   $unidadesPagina = $_POST['cantidad'];
