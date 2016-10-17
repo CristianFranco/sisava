@@ -155,21 +155,23 @@
     <?php
         }else{
     ?>
-                   <div class="col-xs-8 text-right menu-1">
+                   <div class="col-xs-7 text-right menu-1">
                         <ul>
                             <li id="index"><a href="index.php">Inicio</a></li>
                             <li id="services"><a href="producto.php">Comprar Productos</a></li>
                             <li id="testimonial"><a href="testimonial.php">Clientes</a></li>
                             <li id="contact"><a href="contact.php">Contactanos</a></li>
-                            
-                            
                         </ul>
                     </div>
-                    <div class="col-xs-2 text-right menu-1">
+                    <!--<div class="col-xs-1 menu-1">
+                        <div class="hexagon"></div>
+                    </div>-->
+                    <div class="col-xs-1 menu-1">
                         <div id="dropdown" name="dropdown" class="dropdown">
                           <button onclick="myFunction(event);" class="dropbtn" id="dropbtn"><?php echo $_SESSION["Usuario"];?></button>
                           <div id="myDropdown" class="dropdown-content">
-                            <a href="modificarPerfil.php">Mi Perfil</a>
+                            <a href="modificarPerfil.php">Mi Perfil</a><br>
+                            <a href="carrito.php">Mi Carrito</a><br>
                             <a onclick="logOut();">Log Out</a>
                           </div>
                         </div>

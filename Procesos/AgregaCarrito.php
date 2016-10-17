@@ -65,6 +65,4 @@ require("connection.php");
 
    	echo json_encode($responseArray);
 
-	
-
 ?>

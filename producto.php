@@ -38,7 +38,8 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/jquery.datetimepicker.css">
         <link rel="stylesheet" href="css/style-pagination.css">
-
+        <link rel="stylesheet" href="slick/slick-theme.css">
+        <link rel="stylesheet" href="slick/slick.css">
         <!-- Modernizr JS -->
         <script src="js/modernizr-2.6.2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -101,24 +102,19 @@
                 </div>
                 <div class="col-md-10 col-sm-10">
                     <!--Poner un while para cada producto, abajo está un ejemplo de un producto-->
-                    <div class="col-md-4 col-sm-6">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="carousel">
+                            <div class="fh5co-staff"><img class="imageCarousel" src="images/productos/word1.png"></div>
+                            <div class="fh5co-staff"><img class="imageCarousel" src="images/productos/word2.png"></div>
+                            <div class="fh5co-staff"><img class="imageCarousel" src="images/productos/word3.png"></div>
+                        </div>
+                        <br style="clear: both;">
                         <div class="product">
                             <div class="front feature-center">
-                                <span class="icon" style="background-color:#ffffff">
-                                    <div class="fh5co-staff">
-                                        <!--Aquí va la imagen del producto-->
-                                        <img src="images/app.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
-                                    </div>
-                                </span>
                                 <h3>Aquí va el nombre del producto</h3>
                                 <p>Aquí va la descripción del producto</p>
                             </div>
                             <div class="back feature-center">
-                                <span class="icon" style="background-color:#ffffff">
-                                    <div class="fh5co-staff">
-                                        <img src="images/app.jpg" alt="Free HTML5 Templates by FreeHTML5.co">
-                                    </div>
-                                </span>
                                 <b>Precio:</b>Precio Producto
                                 <br>
                                 <b>Precio de Instalación:</b>Precio Instalación
@@ -126,26 +122,29 @@
                                 <b>Tiempo de Instalación:</b>Tiempo Instalación hrs
                             </div>
                         </div>
+                        <br style="clear: both;">
                         <div>
-                            <a class="button" onclick="mostrarCompra(2)">Añadir al Carrito</a>
+                            <input class="quantity" id="quantity1" name="quantity" type="number" min="1" value="1" />
+                            <a class="button" onclick="agregarCarrito(1)">Añadir al Carrito</a>
                         </div>
                     </div>
                 </div>
                 <div class="pgn">
                         <ul class="pgn__list" role="navigation" aria-labelledby="paginglabel">
                           <li class="prev" title="Previous Page">
-                            <a href="#" rel="prev"><i class="pgn__prev-icon icon-angle-left"></i><span class="pgn__prev-txt">Previous</span></a>
+                            <a href="#" rel="prev"><i class="pgn__prev-icon icon-angle-left"></i><span class="pgn__prev-txt">Anterior</span></a>
                           </li>
                           <!--<li class="prev" title="Previous Page"></li>-->
                           <li class="pgn__item">
+                            <a class="current">1</a>
+                            <a href="#">2</a>
                             <a href="#">3</a>
                             <a href="#">4</a>
-                            <strong class="current">5</strong>
+                            <a href="#">5</a>
                             <a href="#">6</a>
-                            <a href="#">7</a>
                           </li>
                           <li class="next" title="Next Page">
-                            <a href="#" rel="next"><i class="pgn__next-icon icon-angle-right"></i><span class="pgn__next-txt">Next</span></a>
+                            <a href="#" rel="next"><i class="pgn__next-icon icon-angle-right"></i><span class="pgn__next-txt">Siguiente</span></a>
                           </li>
                         </ul>
                     </div>
@@ -205,5 +204,6 @@
         <script src="js/jquery.datetimepicker.full.min.js"></script>
         <script src="js/product.js"></script>
         <script src="js/index.js"></script>
+        <script src="slick/slick.min.js"></script>
     </body>
 </html>

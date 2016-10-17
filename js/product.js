@@ -9,10 +9,29 @@ $(document).ready(function(){
         date.value="";
         addModal.style.display="none";
     }
+    $(".carousel").slick({
+        arrows: true,
+       infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        slidesToShow: 1,
+                slidesToScroll: 1
+    });
 });
-function mostrarCompra(IdProducto){
-    var inputId=document.getElementById("idProducto");
-    inputId.value=IdProducto;
-    var modal=document.getElementById("formAdd");
-    modal.style.display="block";
+function agregarCarrito(IdProducto){
+    var IdQuanity="quantity"+IdProducto;
+    var inputQuantity=document.getElementById(IdQuanity);
+    var cantidad=inputQuantity.value;
+    $.ajax({
+        url: "./Procesos/AgregaCarrito.php",
+        type: "POST",
+        data: {
+            'producto':IdProducto,
+            'cantidad':cantidad
+        },
+        success: function(msg){
+            alert("Agregado");
+        }
+    });
 }
