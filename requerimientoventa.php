@@ -12,6 +12,7 @@
 
         <!-- Magnific Popup -->
         <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/jquery.datetimepicker.css">
 
         <!-- Theme style  -->
 
@@ -19,6 +20,7 @@
         <!-- Modernizr JS -->
         <script src="js/modernizr-2.6.2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        
 
 
 
@@ -30,11 +32,11 @@
 <div class="row">	
 	<div class="col-md-6">
 	<h2> elige la ubicacion a donde se entregara el servicio</h2>
-		<div id="map"></div>
+		<div id="map" style="width: 500px; height: 500px"></div>
 	</div>
 	<div class="col-md-6">
 	<h2>Elige la fecha y hora</h2>
-	<input type="date" name="calendario">
+		<input id="date">
 	</div>
 
 	</div>
@@ -81,29 +83,84 @@
         <!-- Magnific Popup -->
         <script src="js/jquery.magnific-popup.min.js"></script>
         <script src="js/magnific-popup-options.js"></script>
+        <script type="text/javascript" src="js/jquery.datetimepicker.full.min.js"></script>
         <!-- Main -->
         <script src="js/main.js"></script>
 
 
+       
+        <script type="text/javascript">
+        	$(document).ready(function(){
+		    var date=document.getElementById("date");
+		    jQuery("#date").datetimepicker();
+		    closeAdd.onclick=function(){
+		        quantity.value=1;
+		        date.value="";
+		        addModal.style.display="none";
+		    }
+		});
+        </script>
 
     <script>
-      function initMap() {
-        var myLatLng = {lat: -25.363, lng: 131.044};
+    var marker;
+        var directionsService = new google.maps.DirectionsService();
 
+      function initMap() {
+        var myLatLng = {lat: -25.363, lng: -102.311168};
         // Create a map object and specify the DOM element for display.
         var map = new google.maps.Map(document.getElementById('map'), {
           center: myLatLng,
           scrollwheel: false,
           zoom: 4
         });
+        var infoWindow = new google.maps.InfoWindow({map: map});
+		  if (navigator.geolocation) {
+		  			map.setZoom(15);
 
-        // Create a marker and set its position.
-        var marker = new google.maps.Marker({
-          map: map,
-          position: myLatLng,
-          title: 'Hello World!'
-        });
-      }
+		    navigator.geolocation.getCurrentPosition(function(position) {
+		    var pos = {
+		        lat: position.coords.latitude,
+		        lng: position.coords.longitude
+		      };
+
+		      infoWindow.setPosition(pos);
+		      infoWindow.setContent('Posicion actual.');
+		       marker = new google.maps.Marker({
+		          map: map,
+		          position: pos,
+		          title: 'Hello World!'
+		        });
+		      map.setCenter(pos);
+		    }, function() {
+		      handleLocationError(true, infoWindow, map.getCenter());
+		    });
+		  } else {
+		    // Browser doesn't support Geolocation
+		    handleLocationError(false, infoWindow, map.getCenter());
+		  }
+
+
+		  map.addListener('click', function(e) {
+		    placeMarkerAndPanTo(e.latLng, map);
+		  });
+		 }
+		  
+
+  function placeMarkerAndPanTo(latLng, map) {
+  //	setMapOnAll(null);
+		marker.setMap(null);
+		marker = new google.maps.Marker({
+		  position: latLng,
+		  map: map
+		});
+		//map.panTo(latLng);
+	}
+
+	/*function setMapOnAll(map) {
+	  for (var i = 0; i < markers.length; i++) {
+	    markers[i].setMap(map);
+	  }
+	}*/
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6ruPRFnYFnmQ4lKVFIjE3W1OYloNRB8Q&callback=initMap"

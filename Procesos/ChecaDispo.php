@@ -3,7 +3,7 @@
  	require("connection.php");
     $connection=connect();
 
-	$band = true;
+	$bandResponse = true;
 	$responseArray = array();
 	$messageResult = "Exito";
 
@@ -12,7 +12,7 @@
 	$day = 27;
 	$mounth = 10;
 	$year = 2016;
-	$tiempoServicioRequerido = 1;
+	$tiempoServicioRequerido = 2;
 	$horaInicioRequerido = 11;
 
 $arrayDays = array(
@@ -55,7 +55,6 @@ $arrayDays = array(
     	$horaFinArray = explode(')', $horaFinArray[1]);
     	$horaFinArray = explode(':', $horaFinArray[0]);
     	$horaFin = $horaFinArray[0];
-    	echo "$horaFin";
 
     	$horaServicio = 0;
     	$tiempoServicio = 0;
@@ -67,7 +66,9 @@ $arrayDays = array(
 			and IdUsuarioEmpleado = $idUsuario;";
 
 		    $resultIdVenta = $connection -> query($query2);
+		    $band = true;
 		    while($rowVenta=$resultIdVenta->fetch_array(MYSQLI_ASSOC)){
+		    	$band = false;
 		    	$horaServicio = $rowVenta["hora"];
 		    	//ver a que hora inicia ese servicio
 		    	$queryHoras = "select sum(ventaproducto.Cantidad* producto.tiempoInstalacion) as tiempo -- producto.tiempoInstalacion, producto.IdProducto, ventaproducto.Cantidad, ventaproducto.Cantidad* producto.tiempoInstalacion as tiempoTotal
@@ -87,10 +88,21 @@ $arrayDays = array(
 				    	break;
 				    }
 		    }
+		    if($band){
+		    	$SePuedeBand = true;
+		    }
 	}
 	if($SePuedeBand){
-		echo "simon";
-	}    else{
-		echo "nel";
+		$messageResult = "Si existe disponibilidad";
+    	$bandResponse = true;
+	}else{
+		$messageResult = "No existe disponibilidad";
+    	$bandResponse = false;
 	}
+
+
+   	$response=array("success"=>$bandResponse,"message" => $messageResult);
+    array_push($responseArray,$response);
+
+   	echo json_encode($responseArray);
 ?>
