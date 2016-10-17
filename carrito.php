@@ -13,22 +13,25 @@ tus cosas
     $connection=connect();
 
     session_start();
-    $Uid= $_SESSION['idUsuario'];
+    $user= $_SESSION["IdUser"];
 
-    $query= "select ventaproducto.Cantidad, producto.* from venta, ventaproducto, producto where venta.IdUsuario = $Uid 
+    $query= "select ventaproducto.Cantidad, producto.* from venta, ventaproducto, producto where venta.IdUsuario = $user 
 and venta.IdEstadoVenta = 1
 and ventaproducto.IdVenta = venta.IdVenta
 and producto.IdProducto = ventaproducto.IdProducto;";
     $result=$connection -> query($query);
     $total = 0;
     while($row=$result->fetch_array(MYSQLI_ASSOC)){
-		  $totalParcial = $row[Precio]*$row[Cantidad];
+		  $totalParcial = $row["Precio"]*$row["Cantidad"];
 		  $total = $totalParcial + $total;
-        echo "<li> Producto: $row[Nombre] | Cantidad: $row[Cantidad] | precio: $row[Precio] | total:  $totalParcial</li>";
+        echo "<li> Producto: $row[Nombre] | Cantidad: $row[Cantidad] | precio unitario: $row[Precio] | total:  $totalParcial | <button>borrar</button></li>";
     }
+    echo "</ul>";
 
+	echo "<h2>Total: $total</h2>";
 ?>
-		</ul>
+		
+	<input type="submit" name="Aceptar" id="submit" value="Siguiente">
 
 </body>
 </html>
