@@ -21,8 +21,7 @@ $(document).ready(function(){
 });
 function agregarCarrito(IdProducto){
     var IdQuanity="quantity"+IdProducto;
-    var inputQuantity=document.getElementById(IdQuanity);
-    var cantidad=inputQuantity.value;
+    var cantidad=1;
     $.ajax({
         url: "./Procesos/AgregaCarrito.php",
         type: "POST",
@@ -31,7 +30,38 @@ function agregarCarrito(IdProducto){
             'cantidad':cantidad
         },
         success: function(msg){
-            alert("Agregado");
+        }
+    });
+}
+function agregarCarrito(IdProducto,event){
+    event.preventDefault();
+    var IdQuanity="quantity"+IdProducto;
+    var qty=document.getElementById("cantidad");
+    var cantidad=qty.value;
+    $.ajax({
+        url: "./Procesos/AgregaCarrito.php",
+        type: "POST",
+        data: {
+            'producto':IdProducto,
+            'cantidad':cantidad
+        },
+        success: function(msg){
+        }
+    });
+}
+function mostrarDetalle(IdProducto){
+    $.ajax({
+        url: "./Procesos/mostrarDetalle.php",
+        type: "POST",
+        data: {
+            'IdProducto':IdProducto,
+        },
+        success: function(data){
+            var html=JSON.parse(data);
+            $('#contenedor').html(html["html"]);
+        },
+        error: function(data){
+            alert("error");
         }
     });
 }
