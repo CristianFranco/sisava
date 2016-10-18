@@ -13,7 +13,7 @@
             exit();
         }else{
             session_start();
-            $_SESSION["Usuario"]=$user;
+            $_SESSION["Usuario"]=$result["Username"];
             
             $_SESSION["IdUser"]=$result["IdUsuario"];
             $_SESSION["Logged"]=true;

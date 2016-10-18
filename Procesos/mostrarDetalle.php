@@ -7,7 +7,7 @@
     $row=$result->fetch_array(MYSQLI_ASSOC);
     $html="
     <ul class='breadcrumb'>
-        <li><a href='producto.php'>Items</a></li>
+        <li><a onclick='mostrarProductos(1,false)'>Productos</a></li>
         <li class='active'>$row[Nombre]</li>
     </ul>
     <div class='well well-small'>
@@ -24,7 +24,7 @@
         }else{
             $html.="<div class='item'>";
         }
-        $html.="<a href='#'><img src='./images/productos/$imgArray[UrlImagen]' alt='' style='width:100%'></a></div>";
+        $html.="<a href='#'><img src='./images/productos/$imgArray[UrlImagen]' alt='' style='height: 300px;width:100%'></a></div>";
         $i++;
     }
     $html.="
@@ -63,8 +63,7 @@
                             <input type='text' disabled class='span6' value='$row[tiempoInstalacion] hrs'>
                         </div>
                     </div>
-                    <h4>100 items in stock</h4>
-                    <p>Descripción del Producto
+                    <p>$row[Descripcion]
                     </p>
                     <button type='submit' class='shopBtn'><span class=' icon-shopping-cart'></span>Añadir al Carrito</button>
                 </form>

@@ -1,23 +1,5 @@
 $(document).ready(function(){
-    var closeAdd=document.getElementById("closeAdd");
-    var addModal=document.getElementById("formAdd");
-    var quantity=document.getElementById("quantity");
-    var date=document.getElementById("date");
-    jQuery("#date").datetimepicker();
-    closeAdd.onclick=function(){
-        quantity.value=1;
-        date.value="";
-        addModal.style.display="none";
-    }
-    $(".carousel").slick({
-        arrows: true,
-       infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        slidesToShow: 1,
-                slidesToScroll: 1
-    });
+    mostrarProductos(1,false);
 });
 function agregarCarrito(IdProducto){
     var IdQuanity="quantity"+IdProducto;
@@ -64,4 +46,37 @@ function mostrarDetalle(IdProducto){
             alert("error");
         }
     });
+}
+function mostrarProductos(Id,isCategory){
+    if(isCategory){
+        $.ajax({
+            url: "./Procesos/mostrarProducto.php",
+            type: "POST",
+            data: {
+                'Categoria':Id,
+            },
+            success: function(data){
+                var html=JSON.parse(data);
+                $('#contenedor').html(html["html"]);
+            },
+            error: function(data){
+                alert("error");
+            }
+        });
+    }else{
+        $.ajax({
+            url: "./Procesos/mostrarProducto.php",
+            type: "POST",
+            data: {
+                'Pagina':Id,
+            },
+            success: function(data){
+                var html=JSON.parse(data);
+                $('#contenedor').html(html["html"]);
+            },
+            error: function(data){
+                alert("error");
+            }
+        });
+    }
 }

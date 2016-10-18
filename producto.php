@@ -87,30 +87,28 @@
                                         $query="select * from categoria;";
                                         $result=$connection -> query($query);
                                         while($row=$result->fetch_array(MYSQLI_ASSOC)){
-                                            echo "<li><a href=\"catalogo.php?categoria=$row[IdCategory]\"><span class='icon-chevron-right'></span>$row[Nombre]</a></li>";
+                                            echo "<li><a onclick=mostrarProductos($row[IdCategory],true)><span class='icon-chevron-right'></span>$row[Nombre]</a></li>";
                                         }
                                     ?>
                                 </ul>
                             </div>
                         </div>
                         <div id="contenedor" class="span9">
-                            <ul class='breadcrumb'>
-                                <li><a href='producto.php'>Productos</a> <span class='divider'>/</span></li>
-                            </ul>
                                     <?php
+                                        echo "<ul class='breadcrumb'>
+                                            <li><a onclick='mostrarProductos(1,false)'>Productos</a> <span class='divider'>/</span></li>
+                                            </ul>";
                                         echo "<div class='well well-small'>";
                                         $query="select producto.*,imagen.* from producto,imagen where imagen.Index='1' and producto.IdProducto=imagen.IdProducto;";
                                         $result=$connection -> query($query);
                                         $i=0;
                                         while($row=$result->fetch_array(MYSQLI_ASSOC)){
                                             if($i%3==0){
-                                                echo "<div class='row-fluid>";
+                                                echo "<div class='row-fluid'><ul class='thumbnails'>";
                                             }
-                                            echo "
-                                                <ul class='thumbnails'>
-                                                    <li class='span4'>
+                                            echo "<li class='span4'>
                                                         <div class='thumbnail'>
-                                                            <a href='product_details.html' class='overlay'></a>
+                                                            <a onclcick='mostrarDetalle($row[IdProducto])' class='overlay'></a>
                                                             <a class='zoomTool' onclick='mostrarDetalle($row[IdProducto])' title='add to cart'><span class='icon-search'></span>DETALLES</a>
                                                             <a href='product_details.html'><img src='./images/productos/$row[UrlImagen]' alt=''></a>
                                                             <div class='caption cntr'>
@@ -121,12 +119,14 @@
                                                             </div>
                                                         </div>
                                                     </li>
-                                                </ul>
                                                 ";
-                                            if($i%3==0){
-                                                echo "</div>";
-                                            }
                                             $i++;
+                                            if($i%3==0&&i>0){
+                                                echo "</ul></div>";
+                                            }
+                                        }
+                                        if($i%3!=0){
+                                            echo "</ul></div>";
                                         }
                                         echo "</div>";
                                     ?>

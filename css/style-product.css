@@ -22,6 +22,12 @@ hr.soften {margin: 8px 0;background: #DDD;}
 .thumbnail h4{line-height:42px}
 .thumbnail img{ max-width:100%}
 .thumbnail:hover {border: 1px solid #CACACA;}
+.thumbnail .zoomTool{
+    display: none;
+}
+.thumbnail:hover .zoomTool{
+    display: block;
+}
 .form-horizontal.qtyFrm .control-label{text-align: left;}
 .form-horizontal.qtyFrm .control-label span{font-size:18px}
 .clr{clear:both;}
