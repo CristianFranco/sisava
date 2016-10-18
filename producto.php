@@ -4,8 +4,9 @@
         header("Location: index.php");
     }
 ?>
-<!DOCTYPE HTML>
-<html>
+    <!DOCTYPE HTML>
+    <html>
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,16 +31,13 @@
         <link rel="stylesheet" href="css/icomoon.css">
         <!-- Bootstrap  -->
         <link rel="stylesheet" href="css/bootstrap.css">
-
+        <link rel="stylesheet" href="css/bootstrap-2.css">
         <!-- Magnific Popup -->
         <link rel="stylesheet" href="css/magnific-popup.css">
 
         <!-- Theme style  -->
+        <link rel="stylesheet" href="css/style-product.css">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/jquery.datetimepicker.css">
-        <link rel="stylesheet" href="css/style-pagination.css">
-        <link rel="stylesheet" href="slick/slick-theme.css">
-        <link rel="stylesheet" href="slick/slick.css">
         <!-- Modernizr JS -->
         <script src="js/modernizr-2.6.2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -77,110 +75,71 @@
             </header>
 
             <div id="fh5co-services-section">
-                <div class="container col-md-2 col-sm-2">
-                    <div class="category">
-                        <h2>Categorias</h2>
-                        <ul>
-                            <?php
-                                require("./Procesos/connection.php");
-                                $connection=connect();
-                                $query="select * from categoria;";
-                                $result=$connection -> query($query);
-                                while($row=$result->fetch_array(MYSQLI_ASSOC)){
-                                    $query="select count(*) as cuenta from producto where IdCategoria='".$row["IdCategory"]."';";
-                                    $fila=$connection->query($query);
-                                    $resultado=$fila->fetch_array(MYSQLI_ASSOC);
-                                    echo "<li><a href=\"catalogo.php?categoria=$row[IdCategory]\">$row[Nombre]($resultado[cuenta])</a></li>";
-                                }
-                                $query="select count(*) as cuenta from producto;";
-                                $fila=$connection->query($query);
-                                $resultado=$fila->fetch_array(MYSQLI_ASSOC);
-                                echo "<li><a href=\"catalogo.php?categoria=Todos\">Todos($resultado[cuenta])</a></li>";
-                            ?>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-10 col-sm-10">
-                    <!--Poner un while para cada producto, abajo está un ejemplo de un producto-->
-                    <div class="col-md-4 col-sm-4">
-                        <div class="carousel">
-                            <div class="fh5co-staff"><img class="imageCarousel" src="images/productos/word1.png"></div>
-                            <div class="fh5co-staff"><img class="imageCarousel" src="images/productos/word2.png"></div>
-                            <div class="fh5co-staff"><img class="imageCarousel" src="images/productos/word3.png"></div>
-                        </div>
-                        <br style="clear: both;">
-                        <div class="product">
-                            <div class="front feature-center">
-                                <h3>Aquí va el nombre del producto</h3>
-                                <p>Aquí va la descripción del producto</p>
-                            </div>
-                            <div class="back feature-center">
-                                <b>Precio:</b>Precio Producto
-                                <br>
-                                <b>Precio de Instalación:</b>Precio Instalación
-                                <br>
-                                <b>Tiempo de Instalación:</b>Tiempo Instalación hrs
+                <div class="container">
+                    <div class="row">
+                        <div id="lateral" class="span3">
+                            <div class="well well-small">
+                                <h2>Categorias</h2>
+                                <ul class="nav nav-list">
+                                    <?php
+                                        require("./Procesos/connection.php");
+                                        $connection=connect();
+                                        $query="select * from categoria;";
+                                        $result=$connection -> query($query);
+                                        while($row=$result->fetch_array(MYSQLI_ASSOC)){
+                                            echo "<li><a href=\"catalogo.php?categoria=$row[IdCategory]\"><span class='icon-chevron-right'></span>$row[Nombre]</a></li>";
+                                        }
+                                    ?>
+                                </ul>
                             </div>
                         </div>
-                        <br style="clear: both;">
-                        <div>
-                            <input class="quantity" id="quantity1" name="quantity" type="number" min="1" value="1" />
-                            <a class="button" onclick="agregarCarrito(1)">Añadir al Carrito</a>
+                        <div id="contenedor" class="span9">
+                            <ul class='breadcrumb'>
+                                <li><a href='producto.php'>Productos</a> <span class='divider'>/</span></li>
+                            </ul>
+                                    <?php
+                                        echo "<div class='well well-small'>";
+                                        $query="select producto.*,imagen.* from producto,imagen where imagen.Index='1' and producto.IdProducto=imagen.IdProducto;";
+                                        $result=$connection -> query($query);
+                                        $i=0;
+                                        while($row=$result->fetch_array(MYSQLI_ASSOC)){
+                                            if($i%3==0){
+                                                echo "<div class='row-fluid>";
+                                            }
+                                            echo "
+                                                <ul class='thumbnails'>
+                                                    <li class='span4'>
+                                                        <div class='thumbnail'>
+                                                            <a href='product_details.html' class='overlay'></a>
+                                                            <a class='zoomTool' onclick='mostrarDetalle($row[IdProducto])' title='add to cart'><span class='icon-search'></span>DETALLES</a>
+                                                            <a href='product_details.html'><img src='./images/productos/$row[UrlImagen]' alt=''></a>
+                                                            <div class='caption cntr'>
+                                                                <p>$row[Nombre]</p>
+                                                                <p><strong>$$row[Precio]</strong></p>
+                                                                <h4><a class='shopBtn' onclick=agregarCarrito($row[IdProducto]) title='add to cart'> Añadir al Carrito </a></h4>
+                                                                <br class='clr'>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                ";
+                                            if($i%3==0){
+                                                echo "</div>";
+                                            }
+                                            $i++;
+                                        }
+                                        echo "</div>";
+                                    ?>
                         </div>
                     </div>
+
                 </div>
-                <div class="pgn">
-                        <ul class="pgn__list" role="navigation" aria-labelledby="paginglabel">
-                          <li class="prev" title="Previous Page">
-                            <a href="#" rel="prev"><i class="pgn__prev-icon icon-angle-left"></i><span class="pgn__prev-txt">Anterior</span></a>
-                          </li>
-                          <!--<li class="prev" title="Previous Page"></li>-->
-                          <li class="pgn__item">
-                            <a class="current">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">4</a>
-                            <a href="#">5</a>
-                            <a href="#">6</a>
-                          </li>
-                          <li class="next" title="Next Page">
-                            <a href="#" rel="next"><i class="pgn__next-icon icon-angle-right"></i><span class="pgn__next-txt">Siguiente</span></a>
-                          </li>
-                        </ul>
-                    </div>
             </div>
-            <br style="clear: both;">
             <div>
                 <?php
                     require('footer.php');
                 ?>
             </div>
-        </div>
-        <div id="formAdd" class="modal">
-            <section>
-                <div id="wrapper">
-                    <div id="login" class="animate form">
-                        <a id="closeAdd" href="#close" title="Close" class="close">X</a>
-                        <form id="loginForm" method="post" action="./Procesos/login.php" autocomplete="on">
-                            <h1>Añadir a Carrito</h1>
-                            <p>
-                                <label for="quantity" class="uname"> Cantidad de Producto </label>
-                                <input id="quantity" name="quantity" required="required" type="number" min="1" value="1" />
-                            </p>
-                            <p>
-                                <label for="date" class="youpasswd">Elije cuando y a que hora realizamos el servicio</label>
-                                <input id="date" name="date" required="required" />
-                            </p>
-                            <input type="hidden" id="idProducto">
-                            <p>
-                                <input type="submit" value="Añadir" class="btn btn-primary" />
-                            </p>
-                            <p class="change_link">
-                            </p>
-                        </form>
-                    </div>
-                </div>
-            </section>
         </div>
         <div class="gototop js-top">
             <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
@@ -199,6 +158,7 @@
         <!-- Magnific Popup -->
         <script src="js/jquery.magnific-popup.min.js"></script>
         <script src="js/magnific-popup-options.js"></script>
+        <script src="js/shop.js"></script>
         <!-- Main -->
         <script src="js/main.js"></script>
         <script src="js/jquery.datetimepicker.full.min.js"></script>
@@ -206,4 +166,5 @@
         <script src="js/index.js"></script>
         <script src="slick/slick.min.js"></script>
     </body>
-</html>
+
+    </html>

@@ -61,15 +61,14 @@
                 ?>
             </div>
 
-            <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/stLogo_Color.jpg);">
+            <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/stLogo_Color.jpg);">
                 <div class="overlay"></div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1 text-center">
                             <div class="display-t">
                                 <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                                    <h1>Bienvenido</h1>
-                                    <h2>Te ofrecemos un servicio integral tecnológico el cual te ayuda a que tú negocio este fortalecido con la tecnología</h2>
+                                    <h1>Carrito de Compras</h1>
                                 </div>
                             </div>
                         </div>
@@ -93,10 +92,12 @@
 
                             $user= $_SESSION["IdUser"];
 
-                            $query= "select ventaproducto.Cantidad, producto.* from venta, ventaproducto, producto where venta.IdUsuario = $user 
+                            $query= "select ventaproducto.Cantidad, producto.*, imagen.* from venta, ventaproducto, producto, imagen where venta.IdUsuario = $user 
                         and venta.IdEstadoVenta = 1
+                        and imagen.Index = 1
                         and ventaproducto.IdVenta = venta.IdVenta
-                        and producto.IdProducto = ventaproducto.IdProducto;";
+                        and producto.IdProducto = ventaproducto.IdProducto
+                        and producto.IdProducto = imagen.IdProducto;";
                             $result=$connection -> query($query);
                             $total = 0;
                             while($row=$result->fetch_array(MYSQLI_ASSOC)){
@@ -104,7 +105,7 @@
                                   $total = $totalParcial + $total;
                                 echo "<div class='product'>
                                     <div class='product-image'>
-                                        <img src='http://s.cdpn.io/3/dingo-dog-bones.jpg'>
+                                        <img src='./images/productos/$row[UrlImagen]'>
                                     </div>
                                     <div class='product-details'>
                                         <div class='product-title'>$row[Nombre]</div>
@@ -116,7 +117,7 @@
                                     </div>
                                     <div class='product-removal'>
                                         <button class='remove-product'>
-                                            Remove
+                                            Eliminar
                                         </button>
                                     </div>
                                     <div class='product-line-price'>$totalParcial</div>
