@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-
+<hr class="cinta">
 <div class="row copyright">
     <div class="col-md-4 text-center">
         Tienes dudas, cont&aacute;ctanos<br>

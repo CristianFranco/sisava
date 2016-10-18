@@ -76,61 +76,63 @@
                     </div>
                 </div>
             </header>
-            <div class="shopping-cart">
-                <div class="column-labels">
-                    <label class="product-image">Imagen</label>
-                    <label class="product-details">Producto</label>
-                    <label class="product-price">Precio</label>
-                    <label class="product-quantity">Cantidad</label>
-                    <label class="product-removal">Remover</label>
-                    <label class="product-line-price">Total</label>
-                </div>
-                <?php
-
-                     require("./Procesos/connection.php");
-                        $connection=connect();
-
-                        $user= $_SESSION["IdUser"];
-
-                        $query= "select ventaproducto.Cantidad, producto.* from venta, ventaproducto, producto where venta.IdUsuario = $user 
-                    and venta.IdEstadoVenta = 1
-                    and ventaproducto.IdVenta = venta.IdVenta
-                    and producto.IdProducto = ventaproducto.IdProducto;";
-                        $result=$connection -> query($query);
-                        $total = 0;
-                        while($row=$result->fetch_array(MYSQLI_ASSOC)){
-                              $totalParcial = $row["Precio"]*$row["Cantidad"];
-                              $total = $totalParcial + $total;
-                            echo "<div class='product'>
-                                <div class='product-image'>
-                                    <img src='http://s.cdpn.io/3/dingo-dog-bones.jpg'>
-                                </div>
-                                <div class='product-details'>
-                                    <div class='product-title'>$row[Nombre]</div>
-                                    <p class='product-description'>$row[Descripcion]</p>
-                                </div>
-                                <div class='product-price'>$row[Precio]</div>
-                                <div class='product-quantity'>
-                                    <input type='number' value='$row[Cantidad]' min='1'>
-                                </div>
-                                <div class='product-removal'>
-                                    <button class='remove-product'>
-                                        Remove
-                                    </button>
-                                </div>
-                                <div class='product-line-price'>$totalParcial</div>
-                            </div>";
-                        }
-                ?>
-                <div class="totals">
-                    <div class="totals-item totals-item-total">
-                        <label>Total</label>
-                        <div class="totals-value" id="cart-total"><?php echo $total;?></div>
+            <div class="container">
+                <div class="shopping-cart">
+                    <div class="column-labels">
+                        <label class="product-image">Imagen</label>
+                        <label class="product-details">Producto</label>
+                        <label class="product-price">Precio</label>
+                        <label class="product-quantity">Cantidad</label>
+                        <label class="product-removal">Remover</label>
+                        <label class="product-line-price">Total</label>
                     </div>
+                    <?php
+
+                         require("./Procesos/connection.php");
+                            $connection=connect();
+
+                            $user= $_SESSION["IdUser"];
+
+                            $query= "select ventaproducto.Cantidad, producto.* from venta, ventaproducto, producto where venta.IdUsuario = $user 
+                        and venta.IdEstadoVenta = 1
+                        and ventaproducto.IdVenta = venta.IdVenta
+                        and producto.IdProducto = ventaproducto.IdProducto;";
+                            $result=$connection -> query($query);
+                            $total = 0;
+                            while($row=$result->fetch_array(MYSQLI_ASSOC)){
+                                  $totalParcial = $row["Precio"]*$row["Cantidad"];
+                                  $total = $totalParcial + $total;
+                                echo "<div class='product'>
+                                    <div class='product-image'>
+                                        <img src='http://s.cdpn.io/3/dingo-dog-bones.jpg'>
+                                    </div>
+                                    <div class='product-details'>
+                                        <div class='product-title'>$row[Nombre]</div>
+                                        <p class='product-description'>$row[Descripcion]</p>
+                                    </div>
+                                    <div class='product-price'>$row[Precio]</div>
+                                    <div class='product-quantity'>
+                                        <input type='number' value='$row[Cantidad]' min='1'>
+                                    </div>
+                                    <div class='product-removal'>
+                                        <button class='remove-product'>
+                                            Remove
+                                        </button>
+                                    </div>
+                                    <div class='product-line-price'>$totalParcial</div>
+                                </div>";
+                            }
+                    ?>
+                    <div class="totals">
+                        <div class="totals-item totals-item-total">
+                            <label>Total</label>
+                            <div class="totals-value" id="cart-total"><?php echo $total;?></div>
+                        </div>
+                    </div>
+
+                    <button class="checkout">Finalizar Compra</button>
+
                 </div>
-
-                <button class="checkout">Finalizar Compra</button>
-
             </div>
             <div>
                 <?php
