@@ -9,11 +9,13 @@
 
 	$SePuedeBand = false;
 
-	$day = 27;
-	$mounth = 10;
-	$year = 2016;
-	$tiempoServicioRequerido = 2;
-	$horaInicioRequerido = 11;
+    $idEmpleadoFinal = 0;
+
+	$day = $_POST['day'];
+	$mounth = $_POST['month'];
+	$year = $_POST['year'];
+	$tiempoServicioRequerido = $_POST['hora'];
+	$horaInicioRequerido = $_POST['requerido'];
 
 $arrayDays = array(
     "Monday" => "Lu",
@@ -42,6 +44,7 @@ $arrayDays = array(
 
     while($row=$result->fetch_array(MYSQLI_ASSOC)){
     	$idUsuario = $row['IdUsuario'];
+    	$idEmpleadoFinal = $idUsuario;
     	$horario = $row['Horario'];
     	$horarioArray = explode($arrayDays[$dayName], $horario);
     	$horarioArray = explode(',', $horarioArray[1]);
@@ -101,7 +104,7 @@ $arrayDays = array(
 	}
 
 
-   	$response=array("success"=>$bandResponse,"message" => $messageResult);
+   	$response=array("success"=>$bandResponse,"message" => $messageResult, "idEmpleado" => $idEmpleadoFinal);
     array_push($responseArray,$response);
 
    	echo json_encode($responseArray);

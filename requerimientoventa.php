@@ -9,40 +9,68 @@
         <link rel="stylesheet" href="css/icomoon.css">
         <!-- Bootstrap  -->
         <link rel="stylesheet" href="css/bootstrap.css">
-
         <!-- Magnific Popup -->
         <link rel="stylesheet" href="css/magnific-popup.css">
         <link rel="stylesheet" href="css/jquery.datetimepicker.css">
-
         <!-- Theme style  -->
-
-
         <!-- Modernizr JS -->
         <script src="js/modernizr-2.6.2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        
-
-
-
 </head>
 <body >
+   <?php
+    session_start();
+                    require('header.php');
+                       
 
+                ?>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <div class="container" >
 <div class="row">	
 	<div class="col-md-6">
-	<h2> elige la ubicacion a donde se entregara el servicio</h2>
-		<div id="floating-panel">
-      <input id="latlng" type="text" value="40.714224,-73.961452">
-      <input id="submit" type="button" value="Reverse Geocode">
-    </div>
 		<div id="map" style="width: 500px; height: 500px"></div>
+		<ul>
+		<?php
+			require("Procesos/connection.php");
+		    $connection=connect();
+		    $idUser= $_SESSION["IdUser"];
+		    $queryDay = "select * from domicilio where IdUsuario = $idUser";
+			$result = $connection -> query($queryDay);
+			while($row=$result->fetch_array(MYSQLI_ASSOC)){
+		    
+		    	echo "<li><button onclick=\"cargaDireccion($row[Latitud],$row[Longitud],$row[IdDomicilio])\">$row[Nombre]</button></li>";
+			}
+		 ?>
+		 </ul>
+		 <input type="text" name="hola" id="IdAddress" value="0">
+		 <input type="text" name="hola" id="calle" value="0">
+		 <input type="text" name="hola" id="numero" value="0">
+		 <input type="text" name="hola" id="lat" value="0">
+		 <input type="text" name="hola" id="lng" value="0">
+		 <input type="text" name="hola" id="idEmpleado" value="0">
+
 	</div>
+
+
 	<div class="col-md-6">
 	<h2>Elige la fecha y hora</h2>
 		<input id="date">
+		<input type="submit" id="btnVerif" name="verifica" value = "Verficar disponibilidad">
 	</div>
-
+		<input type="submit" id="aceptarPedido" name="aceptarPedido" value = "Finalizar compra">
 	</div>
 	<!--
 	<div class="row">
@@ -97,15 +125,12 @@
         	$(document).ready(function(){
 		    var date=document.getElementById("date");
 		    jQuery("#date").datetimepicker();
-		    closeAdd.onclick=function(){
-		        quantity.value=1;
-		        date.value="";
-		        addModal.style.display="none";
-		    }
+		 
 		});
         </script>
 
-    <script src="js/mapa.js">
+    <script src="js/mapa.js" ></script>
+    <script src="js/jsApiConsumer/verificaDispo.js" ></script>
     
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6ruPRFnYFnmQ4lKVFIjE3W1OYloNRB8Q&sensor=true&signed_in=true&callback=initMap"
