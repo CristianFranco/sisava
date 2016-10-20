@@ -36,14 +36,45 @@ require("connection.php");
     	}
     }
 
-    $query = "insert into pago (Monto,Fecha,IdVenta) values ($monto,curdate,$idVenta);";
+    $query = "insert into pago (Monto,Fecha,IdVenta) values ($monto,curdate(),$idVenta);";
     if(($connection -> query($query))){
     		$messageResult = "exito";
     		$band = true;
     	}else{
     		$messageResult = "error al pagar";
-    		$band = true;
+    		$band = false;
     	}
+
+
+$query = "select sum(ventaproducto.Cantidad* (producto.Precio + producto.PrecioInstalacion)) as total 
+				from ventaproducto, producto
+				where 
+				ventaproducto.IdVenta = $idVenta
+				and producto.IdProducto = ventaproducto.IdProducto;";
+			$result = $connection -> query($query);
+			$precioDebe = 0;
+			while($row=$result->fetch_array(MYSQLI_ASSOC)){
+		    	$precioDebe = $row["total"];
+			}
+			$query = "select sum(Monto) as total FROM pago
+				where IdVenta = $idVenta;";
+			$result = $connection -> query($query);
+			while($row=$result->fetch_array(MYSQLI_ASSOC)){
+		    	$precioDebe -= $row["total"];
+			}
+
+			if($precioDebe <= 0 ){
+					$query = "update venta set IdEstadoVenta = 4 where IdVenta=$idVenta;";
+					if(($connection -> query($query))){
+			    		$messageResult = "exito";
+			    		$band = true;
+			    	}else{
+			    		$messageResult = "error al pagar";
+			    		$band = false;
+			    	}
+			}else{}
+
+
 
    	$response=array("success"=>$band,"message" => $messageResult);
 

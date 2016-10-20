@@ -21,7 +21,7 @@
    <?php
     session_start();
     require('header.php');
-    $idVenta = 5;//$_GET[venta];
+    $idVenta = $_GET["venta"];
    ?>
 <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/stLogo_Color.jpg);">
                 <div class="overlay"></div>
@@ -41,8 +41,10 @@
             <hr>
 
 <div class="container" >
+<h2 id = "exito" hidden="true">Pago con éxito</h2>
+<h2 id = "error" hidden="false">Error al pagar</h2>
 <?php
-			echo "<input type=\"text\" name=\"idVenta\" id=\"idVenta\" hidden=\"true\" value=\"$idVenta\">";
+			echo "<input type=\"text\" name=\"idVenta\" hidden=\"true\" id=\"idVenta\"  value=\"$idVenta\">";
 			require("Procesos/connection.php");
 		    $connection=connect();
 		    $idUser= $_SESSION["IdUser"];
