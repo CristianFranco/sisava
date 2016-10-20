@@ -92,7 +92,7 @@
 
                             $user= $_SESSION["IdUser"];
 
-                            $query= "select ventaproducto.Cantidad, producto.*, imagen.* from venta, ventaproducto, producto, imagen where venta.IdUsuario = $user 
+                            $query= "select ventaproducto.Cantidad,ventaproducto.IdVenta, producto.*, imagen.* from venta, ventaproducto, producto, imagen where venta.IdUsuario = $user 
                         and venta.IdEstadoVenta = 1
                         and imagen.Index = 1
                         and ventaproducto.IdVenta = venta.IdVenta
@@ -113,12 +113,13 @@
                                     </div>
                                     <div class='product-price'>$row[Precio]</div>
                                     <div class='product-quantity'>
-                                        <input type='number' value='$row[Cantidad]' min='1'>
+                                        <input type='number' onchange='actualizarCantidad($row[IdVenta],$row[IdProducto],event)' value='$row[Cantidad]' min='1'>
                                     </div>
                                     <div class='product-removal'>
-                                        <button class='remove-product'>
+                                        <button onclick='eliminarProducto($row[IdVenta],$row[IdProducto])' class='remove-product'>
                                             Eliminar
                                         </button>
+                                        <input type='hidden' value='$row[IdVenta],$row[IdProducto]'>
                                     </div>
                                     <div class='product-line-price'>$totalParcial</div>
                                 </div>";

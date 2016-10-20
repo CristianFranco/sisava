@@ -61,9 +61,8 @@ function updateQuantity(quantityInput)
       recalculateCart();
       $(this).fadeIn(fadeTime);
     });
-  });  
+  });
 }
-
 
 /* Remove item from cart */
 function removeItem(removeButton)
@@ -74,4 +73,29 @@ function removeItem(removeButton)
     productRow.remove();
     recalculateCart();
   });
+}
+
+function eliminarProducto(IdVenta,IdProducto){
+    $.ajax({
+        url: "./Procesos/eliminarProducto.php",
+        type: "POST",
+        data:{
+            'IdVenta':IdVenta,
+            'IdProducto':IdProducto
+        }
+    });
+}
+
+function actualizarCantidad(IdVenta,IdProducto,event){
+    var source=event.target||event.srcElement;
+    var cantidad=source.value;
+    $.ajax({
+        url: "./Procesos/modificarCantidad.php",
+        type: "POST",
+        data:{
+            'IdVenta':IdVenta,
+            'IdProducto':IdProducto,
+            'Cantidad':cantidad
+        }
+    })
 }
