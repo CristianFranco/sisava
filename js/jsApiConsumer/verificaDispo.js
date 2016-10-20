@@ -65,6 +65,12 @@ $(document).ready(function() {
                     	 for (var x = 0; x < result.length; x++) {
                             if(result[x].success){
                             	$("#exito").slideDown();
+                            	$("#aceptarPedido").hide();
+                            	setTimeout(function(){
+							        window.location.href = "index.php";
+
+							    }, 2000);
+
                             }else{
                             	$("error").slideDown();
                             }

@@ -46,6 +46,7 @@
 		<h2>Selecciona el lugar donde se realizara el servicio</h2>
 
 		<div id="map" style="width: 500px; height: 500px"></div>
+		<br>
 		<ul>
 		<?php
 			require("Procesos/connection.php");
@@ -55,7 +56,7 @@
 			$result = $connection -> query($queryDay);
 			while($row=$result->fetch_array(MYSQLI_ASSOC)){
 		    
-		    	echo "<li><button onclick=\"cargaDireccion($row[Latitud],$row[Longitud],$row[IdDomicilio])\">$row[Nombre]</button></li>";
+		    	echo "<li style='list-style-type: none;margin-left:0px;'><button class=\"form-control\" onclick=\"cargaDireccion($row[Latitud],$row[Longitud],$row[IdDomicilio])\">$row[Nombre]</button></li>";
 			}
 		 ?>
 		 </ul>
@@ -75,7 +76,7 @@
 		<h1 id="disponible" hidden="true">Fecha Disponible</h1>
 		<h1 id="Nodisponible" hidden="false">Fecha No Disponible</h1>
 		<br>
-		<input type="submit"  class="checkout" id="aceptarPedido" name="aceptarPedido" value = "Finalizar compra">
+		<input type="submit" id="aceptarPedido" class="form-control" name="aceptarPedido" value = "Finalizar compra">
 
 		<h1 id="exito" hidden="true">Servicio realizado con exito</h1>
 		<h1 id="error" hidden="true">Error Intente mas tarde</h1>

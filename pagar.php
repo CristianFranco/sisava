@@ -42,22 +42,43 @@
 
 <div class="container" >
 <?php
+			echo "<input type=\"text\" name=\"idVenta\" id=\"idVenta\" hidden=\"true\" value=\"$idVenta\">";
 			require("Procesos/connection.php");
 		    $connection=connect();
 		    $idUser= $_SESSION["IdUser"];
-		    $query = "select sum(ventaproducto.Cantidad* producto.Precio + producto.PrecioInstalacion) as total 
-from ventaproducto, producto
-where 
-ventaproducto.IdVenta = $idVenta
-and producto.IdProducto = ventaproducto.IdProducto;";
-//select sum(Monto) as total FROM pago
- //				where IdVenta = 4;";
+		    $query = "select sum(ventaproducto.Cantidad* (producto.Precio + producto.PrecioInstalacion)) as total 
+				from ventaproducto, producto
+				where 
+				ventaproducto.IdVenta = $idVenta
+				and producto.IdProducto = ventaproducto.IdProducto;";
+			$result = $connection -> query($query);
+			$precioDebe = 0;
+			while($row=$result->fetch_array(MYSQLI_ASSOC)){
+		    	$precioDebe = $row["total"];
+			}
+			$query = "select sum(Monto) as total FROM pago
+				where IdVenta = $idVenta;";
 			$result = $connection -> query($query);
 			while($row=$result->fetch_array(MYSQLI_ASSOC)){
-		    
-		    	echo "<h2>Tienes un adeudo de : $$row[total] </h2>";
+		    	$precioDebe -= $row["total"];
 			}
+			echo "<h2>Tienes un adeudo de : $$precioDebe </h2>";
+
+			$query = "select * from tarjeta where IdUsuario = $idUser;";
+			$result = $connection -> query($query);
+			$band = true;
+			while($row=$result->fetch_array(MYSQLI_ASSOC)){
+				if($band){
+					echo "<ul><h2>Seleciona una de tus tarjetas</h2>";
+					$band=false;
+				}
+		    	$precioDebe = $row["Last4"];
+		    	echo "<li style='list-style-type: none;'><button class=\"form-control\" onclick=\"cargaTarjeta('$row[Last4]')\">***** ***** **** $row[Last4]</button></li>";
+			}
+			echo "</ul>";
+
 		 ?>
+
 	
 	<div class="row">
 		<div class="col-md-6">
@@ -86,7 +107,7 @@ and producto.IdProducto = ventaproducto.IdProducto;";
 			<input type="text" class="form-control" id="monto" placeholder="cantidad">
 		</div>
 		<div class="col-md-6">
-			<input type="submit" class="form-control" id="sumbit" value="Pagar">
+			<input type="submit" class="form-control" id="btnSubmit" value="Pagar">
 		</div>
 
 
@@ -114,23 +135,8 @@ and producto.IdProducto = ventaproducto.IdProducto;";
         <script type="text/javascript" src="js/jquery.datetimepicker.full.min.js"></script>
         <!-- Main -->
         <script src="js/main.js"></script>
-
-
-       
-        <script type="text/javascript">
-        	$(document).ready(function(){
-		    var date=document.getElementById("date");
-		    jQuery("#date").datetimepicker();
-		 
-		});
-        </script>
-
-    <script src="js/mapa.js" ></script>
-    <script src="js/jsApiConsumer/verificaDispo.js" ></script>
-    
+        <script src="js/jsApiConsumer/pagar.js"></script>    
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6ruPRFnYFnmQ4lKVFIjE3W1OYloNRB8Q&sensor=true&signed_in=true&callback=initMap"
-        async defer></script>
 
 </body>
 </html>
