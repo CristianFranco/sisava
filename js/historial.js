@@ -1,5 +1,7 @@
 var fecha,fechaCompleto;
 $(document).ready(function(){
+    $('#carruselTerminadas').carousel();
+    $('#carruselProgreso').carousel();
     fecha=$('#inProgress').find('.carrusel').html();
     fechaCompleto=$('#finished').find('.carrusel').html();
     $('#tablaProgreso').DataTable({
@@ -55,6 +57,12 @@ $(document).ready(function(){
             type: "POST",
             data:{
                 'Fecha':fechaCompleto
+            },
+            beforeSend: function(){
+                alert("Fecha Cambia a:"+fechaCompleto);
+            },
+            error: function(data){
+                alert("Error");
             }
         }
     });
@@ -62,10 +70,18 @@ $(document).ready(function(){
     actualizaTabla();
 });
 function actualizaTabla(){
-    fecha=$('#inProgress').find('.carrusel').html();
-    $('#tablaProgreso').DataTable().ajax.reload();
+    setTimeout(function(){
+        fecha=$('#inProgress').find('.active').find('.carruselProgreos').html();
+        //alert(fecha);
+        $('#tablaProgreso').DataTable().ajax.reload();
+    },1000);
+    
 }
 function actualizaCompleto(){
-    fechaCompleto=$('#finished').find('.carrusel').html();
-    $('#tablaCompleto').DataTable().ajax.reload();
+    setTimeout(function(){
+       fechaCompleto=$('#finished').find('.active').find('.carrusel').html();
+        //alert(fechaCompleto);
+        $('#tablaCompleto').DataTable().ajax.reload(); 
+    },1000);
+    
 }

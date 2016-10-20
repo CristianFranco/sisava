@@ -83,12 +83,12 @@
                     <div class="row">
                         <div id="finished" class="span12">
                             <h1>Compras Terminadas</h1>
-                            <div id='myCarousel' class='carousel slide cntr' data-interval="false">
+                            <div id='carruselTerminadas' class='carousel slide cntr' data-interval="false">
                                 <div class='carousel-inner'>
                             <?php
                                 require("Procesos/connection.php");
                                 $connection=connect();
-                                $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=2 and Fecha is not null;";
+                                $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=4 and IdUsuario=$_SESSION[IdUser] and Fecha is not null;";
                                 $result=$connection->query($query);
                                 $i=0;
                                 while($row=$result->fetch_array(MYSQLI_ASSOC)){
@@ -101,8 +101,8 @@
                                     $i++;
                                 }
                             ?>
-                                    <a style="top:10px;" class='left carousel-control' onclick="actualizaCompleto()" data-slide='prev'>‹</a>
-                                    <a style="top:10px;" class='right carousel-control' onclick="actualizaCompleto()" data-slide='next'>›</a>
+                                    <a style="top:10px;" href="#carruselTerminadas" class='left carousel-control' onclick="actualizaCompleto();" data-slide='prev'>‹</a>
+                                    <a style="top:10px;" href="#carruselTerminadas" class='right carousel-control' onclick="actualizaCompleto();" data-slide='next'>›</a>
                                 </div>
                             </div>
                             <table id="tablaCompleto" class="table table-striped table-hover" width="100%">
@@ -124,10 +124,10 @@
                     <div class="row">
                         <div id="inProgress" class="span12">
                             <h1>Compras en Progreso</h1>
-                            <div id='myCarousel' class='carousel slide cntr' data-interval="false">
+                            <div id='carruselProgreso' class='carousel slide cntr' data-interval="false">
                                 <div class='carousel-inner'>
                             <?php
-                                $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=1 and Fecha is not null;";
+                                $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=3 and IdUsuario=$_SESSION[IdUser] and Fecha is not null;";
                                 $result=$connection->query($query);
                                 $i=0;
                                 while($row=$result->fetch_array(MYSQLI_ASSOC)){
@@ -136,12 +136,12 @@
                                     }else{
                                         echo "<div class='item'>";
                                     }
-                                    echo "<h3 class='carrusel'>".$row["fecha"]."</h3></div>";
+                                    echo "<h3 class='carruselProgreso'>".$row["fecha"]."</h3></div>";
                                     $i++;
                                 }
                             ?>
-                                    <a style="top:10px;" class='left carousel-control' onclick="actualizaTabla();" data-slide='prev'>‹</a>
-                                    <a style="top:10px;" class='right carousel-control' onclick="actualizaTabla();" data-slide='next'>›</a>
+                                    <a style="top:10px;" href="#carruselProgreso" class='left carousel-control' onclick="actualizaTabla();" data-slide='prev'>‹</a>
+                                    <a style="top:10px;" href="#carruselProgreso" class='right carousel-control' onclick="actualizaTabla();" data-slide='next'>›</a>
                                 </div>
                             </div>
                             <table id="tablaProgreso" class="table table-striped table-hover" width="100%">
@@ -185,7 +185,6 @@
         <!-- Magnific Popup -->
         <script src="js/jquery.magnific-popup.min.js"></script>
         <script src="js/magnific-popup-options.js"></script>
-        <script src="js/shop.js"></script>
         <!-- Main -->
         <script src="js/main.js"></script>
         <script src="js/jquery.datetimepicker.full.min.js"></script>
