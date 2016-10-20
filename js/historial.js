@@ -22,13 +22,17 @@ $(document).ready(function(){
             {"mData":"cantidad","orderable":false},
             {"mData":"costo","orderable":false},
             {"mData":"fecha","orderable":false},
-            {"mData":"hora","orderable":false}
+            {"mData":"hora","orderable":false},
+            {"mData":"boton","orderable":false}
         ],
         "ajax":{
             url: "./Procesos/mostrarProgreso.php",
             type: "POST",
             data:{
                 'Fecha':fecha
+            },
+            beforeSend: function(xhr,s){
+                s.url+="?Fecha="+fecha;
             }
         }
     });
@@ -58,8 +62,8 @@ $(document).ready(function(){
             data:{
                 'Fecha':fechaCompleto
             },
-            beforeSend: function(){
-                alert("Fecha Cambia a:"+fechaCompleto);
+            beforeSend: function(xhr,s){
+                s.url+="?Fecha="+fechaCompleto;
             },
             error: function(data){
                 alert("Error");
@@ -71,7 +75,7 @@ $(document).ready(function(){
 });
 function actualizaTabla(){
     setTimeout(function(){
-        fecha=$('#inProgress').find('.active').find('.carruselProgreos').html();
+        fecha=$('#inProgress').find('.active').find('.carruselProgreso').html();
         //alert(fecha);
         $('#tablaProgreso').DataTable().ajax.reload();
     },1000);

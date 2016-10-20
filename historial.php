@@ -153,7 +153,8 @@
                                         <th width="15%">Cantidad</th>
                                         <th width="15%">Costo</th>
                                         <th width="15%">Fecha</th>
-                                        <th width="15%">Hora</th>
+                                        <th width="10%">Hora</th>
+                                        <th width="5%"></th>
                                     </tr>
                                 </thead>
                             </table>
@@ -193,6 +194,12 @@
         <script src="slick/slick.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.12/datatables.min.js"></script>
         <script type="text/javascript" src="js/historial.js"></script>
+        <script type="text/javascript">
+        	function rediretPagar(id){
+        	 	window.location.href = "pagar.php?venta="+id;
+        	 };
+
+        </script>
     </body>
 
     </html>
