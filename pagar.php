@@ -21,6 +21,7 @@
    <?php
     session_start();
     require('header.php');
+    $idVenta = 5;//$_GET[venta];
    ?>
 <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/stLogo_Color.jpg);">
                 <div class="overlay"></div>
@@ -29,7 +30,7 @@
                         <div class="col-md-10 col-md-offset-1 text-center">
                             <div class="display-t">
                                 <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                                    <h1>Agrega la dirección y verifica la disponibilidad</h1>
+                                    <h1>Finaliza tu adeudo</h1>
                                 </div>
                             </div>
                         </div>
@@ -40,48 +41,61 @@
             <hr>
 
 <div class="container" >
-<div class="row">	
-	<div class="col-md-6">
-
-		<h2>Selecciona el lugar donde se realizara el servicio</h2>
-
-		<div id="map" style="width: 500px; height: 500px"></div>
-		<ul>
-		<?php
+<?php
 			require("Procesos/connection.php");
 		    $connection=connect();
 		    $idUser= $_SESSION["IdUser"];
-		    $queryDay = "select * from domicilio where IdUsuario = $idUser";
-			$result = $connection -> query($queryDay);
+		    $query = "select sum(ventaproducto.Cantidad* producto.Precio + producto.PrecioInstalacion) as total 
+from ventaproducto, producto
+where 
+ventaproducto.IdVenta = $idVenta
+and producto.IdProducto = ventaproducto.IdProducto;";
+//select sum(Monto) as total FROM pago
+ //				where IdVenta = 4;";
+			$result = $connection -> query($query);
 			while($row=$result->fetch_array(MYSQLI_ASSOC)){
 		    
-		    	echo "<li><button onclick=\"cargaDireccion($row[Latitud],$row[Longitud],$row[IdDomicilio])\">$row[Nombre]</button></li>";
+		    	echo "<h2>Tienes un adeudo de : $$row[total] </h2>";
 			}
 		 ?>
-		 </ul>
-		 <input type="text" id="IdAddress" value="0" hidden="true">
-		 <input type="text" id="calle" value="0" hidden="true">
-		 <input type="text" id="numero" value="0" hidden="true">
-		 <input type="text" id="lat" value="0" hidden="true">
-		 <input type="text" id="lng" value="0" hidden="true">
-		 <input type="text" id="idEmpleado" value="0" hidden="true">
+	
+	<div class="row">
+		<div class="col-md-6">
+			<div class="col-md-4">
+				<input type="radio" name="type" value="male" checked="true"> <img src="images/visa.jpg" style="width:50px" />  <br>
+			</div>
+
+			<div class="col-md-4">
+				<input type="radio" name="type" value="male"> <img src="images/master.jpg" style="width:50px" /><br>
+			</div>		
+
+			<div class="col-md-4">
+				<input type="radio" name="type" value="male"> <img src="images/scotia.png" style="width:50px"/><br>
+			</div>		
+		</div>
+		<div class="col-md-12">
+			<input type="text" id="numTar" class="form-control" placeholder="Numero de tarjeta" maxlength="16" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+		</div>
+		<div class="col-md-6">
+			<input type="text" id="numCvc" class="form-control" placeholder="CVC" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+		</div>
+		<div class="col-md-6">
+			<input type="text" id="numVig" class="form-control" placeholder="Fecha de vigencia" maxlength="4" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+		</div>
+		<div class="col-md-6">
+			<input type="text" class="form-control" id="monto" placeholder="cantidad">
+		</div>
+		<div class="col-md-6">
+			<input type="submit" class="form-control" id="sumbit" value="Pagar">
+		</div>
+
 
 	</div>
 
-
-	<div class="col-md-6">
-	<h2>Elige la fecha y hora</h2>
-		<input id="date">
-		<h1 id="disponible" hidden="true">Fecha Disponible</h1>
-		<h1 id="Nodisponible" hidden="false">Fecha No Disponible</h1>
-		<br>
-		<input type="submit"  class="checkout" id="aceptarPedido" name="aceptarPedido" value = "Finalizar compra">
-
-		<h1 id="exito" hidden="true">Servicio realizado con exito</h1>
-		<h1 id="error" hidden="true">Error Intente mas tarde</h1>
-	</div>
 </div>
-
+ <?php
+            require('footer.php');
+        ?>
 
 
       <!-- jQuery -->

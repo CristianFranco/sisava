@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#btnVerif").click(function(e){
+    $("#date").change(function(e){
     	e.preventDefault();
         var postData = $(this).serializeArray();
         var cal = $("#date");
@@ -25,9 +25,12 @@ $(document).ready(function() {
                     	 for (var x = 0; x < result.length; x++) {
                             if(result[x].success){
                             	$("#idEmpleado").val(result[x].idEmpleado);
-                            alert("Disponibilidad correcta");
+                            	$("#disponible").slideDown();
+                            	$("#Nodisponible").slideUp();
+                            	
                             }else{
-                            alert("No te pueden atender a esta hora");
+                            	$("#Nodisponible").slideDown();
+                            	$("#disponible").slideUp();
                             }
                         }
                     },
@@ -61,9 +64,9 @@ $(document).ready(function() {
                     , success: function (result) {
                     	 for (var x = 0; x < result.length; x++) {
                             if(result[x].success){
-                            alert("si se pudo");
+                            	$("#exito").slideDown();
                             }else{
-                            alert("no se pudo");
+                            	$("error").slideDown();
                             }
                         }
                     },

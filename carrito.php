@@ -132,7 +132,7 @@
                         </div>
                     </div>
 
-                    <button class="checkout">Finalizar Compra</button>
+                    <button id="sendRequ" class="checkout">Aceptar</button>
 
                 </div>
             </div>
@@ -146,6 +146,7 @@
         <div class="gototop js-top">
             <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
         </div>
+
 
         <!-- jQuery -->
         <script src="js/jquery.min.js"></script>
@@ -163,6 +164,15 @@
         <!-- Main -->
         <script src="js/main.js"></script>
         <script src="js/carrito.js"></script>
+
+          <script type="text/javascript">
+        	 $("#sendRequ").click(function(e){
+        	 	window.location.href = "requerimientoventa.php";
+        	 });
+
+        </script>
+
+
     </body>
 
 </html>
