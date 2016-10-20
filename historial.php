@@ -80,56 +80,23 @@
 
             <div id="fh5co-services-section">
                 <div class="container">
-                    <div class="row">
-                        <div id="finished" class="span12">
-                            <h1>Compras Terminadas</h1>
-                            <div id='carruselTerminadas' class='carousel slide cntr' data-interval="false">
-                                <div class='carousel-inner'>
-                            <?php
-                                require("Procesos/connection.php");
-                                $connection=connect();
-                                $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=4 and IdUsuario=$_SESSION[IdUser] and Fecha is not null;";
-                                $result=$connection->query($query);
-                                $i=0;
-                                while($row=$result->fetch_array(MYSQLI_ASSOC)){
-                                    if($i==0){
-                                        echo "<div class='item active'>";
-                                    }else{
-                                        echo "<div class='item'>";
-                                    }
-                                    echo "<h3 class='carrusel'>".$row["fecha"]."</h3></div>";
-                                    $i++;
-                                }
-                            ?>
-                                    <a style="top:10px;" href="#carruselTerminadas" class='left carousel-control' onclick="actualizaCompleto();" data-slide='prev'>‹</a>
-                                    <a style="top:10px;" href="#carruselTerminadas" class='right carousel-control' onclick="actualizaCompleto();" data-slide='next'>›</a>
-                                </div>
-                            </div>
-                            <table id="tablaCompleto" class="table table-striped table-hover" width="100%">
-                                <thead>
-                                    <tr>
-                                        <th width="5%"></th>
-                                        <th width="15%">Producto</th>
-                                        <th width="20%"></th>
-                                        <th width="15%">Cantidad</th>
-                                        <th width="15%">Costo</th>
-                                        <th width="15%">Fecha</th>
-                                        <th width="15%">Hora</th>
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                    </div>
                     <br>
                     <div class="row">
                         <div id="inProgress" class="span12">
                             <h1>Compras en Progreso</h1>
+                            <?php
+                                require("Procesos/connection.php");
+                                $connection=connect();
+                                $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=3 and IdUsuario=$_SESSION[IdUser] and Fecha is not null;";
+                                $result=$connection->query($query);
+                                if(!$result->num_rows()<1){
+                            ?>
                             <div id='carruselProgreso' class='carousel slide cntr' data-interval="false">
                                 <div class='carousel-inner'>
                             <?php
-                                $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=3 and IdUsuario=$_SESSION[IdUser] and Fecha is not null;";
-                                $result=$connection->query($query);
+                                
                                 $i=0;
+                                
                                 while($row=$result->fetch_array(MYSQLI_ASSOC)){
                                     if($i==0){
                                         echo "<div class='item active'>";
@@ -158,6 +125,55 @@
                                     </tr>
                                 </thead>
                             </table>
+                            <?php
+                                }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="finished" class="span12">
+                            <h1>Compras Terminadas</h1>
+                            <?php
+                                $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=4 and IdUsuario=$_SESSION[IdUser] and Fecha is not null;";
+                                $result=$connection->query($query);
+                                if(!$result->num_rows()<1){
+                            ?>
+                            <div id='carruselTerminadas' class='carousel slide cntr' data-interval="false">
+                                <div class='carousel-inner'>
+                            <?php
+                                
+                                
+                                $i=0;
+                                while($row=$result->fetch_array(MYSQLI_ASSOC)){
+                                    if($i==0){
+                                        echo "<div class='item active'>";
+                                    }else{
+                                        echo "<div class='item'>";
+                                    }
+                                    echo "<h3 class='carrusel'>".$row["fecha"]."</h3></div>";
+                                    $i++;
+                                }
+                            ?>
+                                    <a style="top:10px;" href="#carruselTerminadas" class='left carousel-control' onclick="actualizaCompleto();" data-slide='prev'>‹</a>
+                                    <a style="top:10px;" href="#carruselTerminadas" class='right carousel-control' onclick="actualizaCompleto();" data-slide='next'>›</a>
+                                </div>
+                            </div>
+                            <table id="tablaCompleto" class="table table-striped table-hover" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th width="5%"></th>
+                                        <th width="15%">Producto</th>
+                                        <th width="20%"></th>
+                                        <th width="15%">Cantidad</th>
+                                        <th width="15%">Costo</th>
+                                        <th width="15%">Fecha</th>
+                                        <th width="15%">Hora</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <?
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
