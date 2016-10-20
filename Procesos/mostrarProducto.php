@@ -28,7 +28,7 @@
                                                             <div class='caption cntr'>
                                                                 <p>$row[Nombre]</p>
                                                                 <p><strong>$$row[Precio]</strong></p>
-                                                                <h4><a class='shopBtn' onclick=agregarCarrito($row[IdProducto]) title='add to cart'> Añadir al Carrito </a></h4>
+                                                                <h4><a class='shopBtn' onclick='agregarCarrito($row[IdProducto])' title='add to cart'> Añadir al Carrito </a></h4>
                                                                 <br class='clr'>
                                                             </div>
                                                         </div>
@@ -69,7 +69,7 @@
                                                             <div class='caption cntr'>
                                                                 <p>$row[Nombre]</p>
                                                                 <p><strong>$$row[Precio]</strong></p>
-                                                                <h4><a class='shopBtn' onclick=agregarCarrito($row[IdProducto]) title='add to cart'> Añadir al Carrito </a></h4>
+                                                                <h4><a class='shopBtn' onclick='agregarCarrito($row[IdProducto])' title='add to cart'> Añadir al Carrito </a></h4>
                                                                 <br class='clr'>
                                                             </div>
                                                         </div>
@@ -85,8 +85,6 @@
                                         }
                                         $html.= "</div>";
         echo json_encode(array('html'=>$html));
-        }else{
-            $query="select * from producto;";
         }
     }
 ?>

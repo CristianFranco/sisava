@@ -1,0 +1,7 @@
+.carrusel{
+    background-color: rgb(228, 236, 255);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 34px;
+    width: 100%;
+}

@@ -37,6 +37,7 @@
 
         <!-- Theme style  -->
         <link rel="stylesheet" href="css/style-product.css">
+        <link rel="stylesheet" href="css/style-modal.css">
         <link rel="stylesheet" href="css/style.css">
         <!-- Modernizr JS -->
         <script src="js/modernizr-2.6.2.min.js"></script>
@@ -72,6 +73,7 @@
                         </div>
                     </div>
                 </div>
+                
             </header>
 
             <div id="fh5co-services-section">
@@ -93,48 +95,39 @@
                                 </ul>
                             </div>
                         </div>
-                        <div id="contenedor" class="span9">
+                        <div class="span9">
+                            <div id="contenedor">
+                            
+                            </div> 
+                            <div>
+                                <ul class="pagination">
                                     <?php
-                                        echo "<ul class='breadcrumb'>
-                                            <li><a onclick='mostrarProductos(1,false)'>Productos</a> <span class='divider'>/</span></li>
-                                            </ul>";
-                                        echo "<div class='well well-small'>";
-                                        $query="select producto.*,imagen.* from producto,imagen where imagen.Index='1' and producto.IdProducto=imagen.IdProducto;";
+                                        $query="select count(*) as cuenta from producto";
                                         $result=$connection -> query($query);
-                                        $i=0;
-                                        while($row=$result->fetch_array(MYSQLI_ASSOC)){
-                                            if($i%3==0){
-                                                echo "<div class='row-fluid'><ul class='thumbnails'>";
-                                            }
-                                            echo "<li class='span4'>
-                                                        <div class='thumbnail'>
-                                                            <a onclcick='mostrarDetalle($row[IdProducto])' class='overlay'></a>
-                                                            <a class='zoomTool' onclick='mostrarDetalle($row[IdProducto])' title='add to cart'><span class='icon-search'></span>DETALLES</a>
-                                                            <a href='product_details.html'><img src='./images/productos/$row[UrlImagen]' alt=''></a>
-                                                            <div class='caption cntr'>
-                                                                <p>$row[Nombre]</p>
-                                                                <p><strong>$$row[Precio]</strong></p>
-                                                                <h4><a class='shopBtn' onclick=agregarCarrito($row[IdProducto]) title='add to cart'> Añadir al Carrito </a></h4>
-                                                                <br class='clr'>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                ";
-                                            $i++;
-                                            if($i%3==0&&i>0){
-                                                echo "</ul></div>";
-                                            }
+                                        $row=$result->fetch_array(MYSQLI_ASSOC);
+                                        $noPaginas=$row["cuenta"];
+                                        if($noPaginas%9==0){
+                                            $noPaginas/=9;
+                                        }else{
+                                            $noPaginas=($noPaginas/9)+1;
                                         }
-                                        if($i%3!=0){
-                                            echo "</ul></div>";
+                                        for($i=1;$i<=$noPaginas;$i++){
+                                            if($i==1){
+                                                echo "<li class='active'>";
+                                            }else{
+                                                echo "<li>";
+                                            }
+                                            echo "<a onclick=mostrarProductos($i,false)>$i</a></li>";
                                         }
-                                        echo "</div>";
                                     ?>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-
+                    
                 </div>
             </div>
+            
             <div>
                 <?php
                     require('footer.php');

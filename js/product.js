@@ -1,35 +1,43 @@
 $(document).ready(function(){
     mostrarProductos(1,false);
+    var closeDialog=document.getElementById("closeAdd");
+    var addedDialog=document.getElementById("dialog");
+    closeDialog.onclick=function(){
+        addedDialog.style.display="none";
+    }
 });
-function agregarCarrito(IdProducto){
-    var IdQuanity="quantity"+IdProducto;
-    var cantidad=1;
-    $.ajax({
-        url: "./Procesos/AgregaCarrito.php",
-        type: "POST",
-        data: {
-            'producto':IdProducto,
-            'cantidad':cantidad
-        },
-        success: function(msg){
-        }
-    });
-}
 function agregarCarrito(IdProducto,event){
-    event.preventDefault();
-    var IdQuanity="quantity"+IdProducto;
-    var qty=document.getElementById("cantidad");
-    var cantidad=qty.value;
-    $.ajax({
-        url: "./Procesos/AgregaCarrito.php",
-        type: "POST",
-        data: {
-            'producto':IdProducto,
-            'cantidad':cantidad
-        },
-        success: function(msg){
-        }
-    });
+    if(event!=undefined){
+        event.preventDefault;
+        var qty=document.getElementById("cantidad");
+        var cantidad=qty.value;
+        var addedDialog=document.getElementById("dialog");
+        $.ajax({
+            url: "./Procesos/AgregaCarrito.php",
+            type: "POST",
+            data: {
+                'producto':IdProducto,
+                'cantidad':cantidad
+            },
+            success: function(msg){
+                addedDialog.style.display="block";
+            }
+        });
+    }else{
+        var cantidad=1;
+        var addedDialog=document.getElementById("dialog");
+        $.ajax({
+            url: "./Procesos/AgregaCarrito.php",
+            type: "POST",
+            data: {
+                'producto':IdProducto,
+                'cantidad':cantidad
+            },
+            success: function(msg){
+                addedDialog.style.display="block";
+            }
+        });
+    }
 }
 function mostrarDetalle(IdProducto){
     $.ajax({
@@ -79,4 +87,10 @@ function mostrarProductos(Id,isCategory){
             }
         });
     }
+}
+function closeAlert(event){
+    event.preventDefault();
+    var closeDialog=document.getElementById("closeAdd");
+    var addedDialog=document.getElementById("dialog");
+    addedDialog.style.display="none";
 }

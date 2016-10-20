@@ -5,7 +5,7 @@
 <body>
 	<?php
         require("connection.php");
-        require("./PHPMailer/PHPMailerAutoload.php");
+        require("PHPMailer/PHPMailerAutoload.php");
         $connection=connect();
         $uname=$_POST["usernamesignup"];
         $email=$_POST["emailsignup"];
