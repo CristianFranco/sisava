@@ -19,9 +19,13 @@ $(document).ready(function() {
                     , success: function (result) {
                     	 for (var x = 0; x < result.length; x++) {
                             if(result[x].success){
-                            alert("bien");
+                                $("#exito").slideDown();
+                                setTimeout(function(){
+                                    window.location.href = "historial.php";
+                                }, 2000);
+
                             }else{
-                            alert("mal");
+                                $("error").slideDown();
                             }
                         }
                     },
