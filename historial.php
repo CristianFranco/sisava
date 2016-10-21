@@ -89,14 +89,12 @@
                                 $connection=connect();
                                 $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=3 and IdUsuario=$_SESSION[IdUser] and Fecha is not null;";
                                 $result=$connection->query($query);
-                                if(!$result->num_rows()<1){
+                                if($result->num_rows>0){
                             ?>
                             <div id='carruselProgreso' class='carousel slide cntr' data-interval="false">
                                 <div class='carousel-inner'>
                             <?php
-                                
                                 $i=0;
-                                
                                 while($row=$result->fetch_array(MYSQLI_ASSOC)){
                                     if($i==0){
                                         echo "<div class='item active'>";
@@ -136,13 +134,11 @@
                             <?php
                                 $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=4 and IdUsuario=$_SESSION[IdUser] and Fecha is not null;";
                                 $result=$connection->query($query);
-                                if(!$result->num_rows()<1){
+                                if($result->num_rows>0){
                             ?>
                             <div id='carruselTerminadas' class='carousel slide cntr' data-interval="false">
                                 <div class='carousel-inner'>
                             <?php
-                                
-                                
                                 $i=0;
                                 while($row=$result->fetch_array(MYSQLI_ASSOC)){
                                     if($i==0){
@@ -171,7 +167,7 @@
                                     </tr>
                                 </thead>
                             </table>
-                            <?
+                            <?php
                                 }
                             ?>
                         </div>
