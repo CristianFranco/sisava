@@ -1,5 +1,23 @@
 $(document).ready(function(){
     //Funciones cambio de sección
+    $.ajax({
+            url: './Procesos/articulos.php',
+            method: 'POST',
+            success: function(data){
+                var numArticulos=JSON.parse(data);
+                $("#cart").find('.badge').html(numArticulos["numeroArticulos"]);
+            }
+        });
+    setInterval(function(){
+        $.ajax({
+            url: './Procesos/articulos.php',
+            method: 'POST',
+            success: function(data){
+                var numArticulos=JSON.parse(data);
+                $("#cart").find('.badge').html(numArticulos["numeroArticulos"]);
+            }
+        });
+    },1000);
     var pathname=window.location.pathname;
     var array=pathname.split('/');
     if(array[2]=="index.php"){
@@ -114,6 +132,12 @@ $(document).ready(function(){
 
     
 });
+onkeydown=onkeyup=function(e){
+    var evtobj=window.event? event : e;
+    if(evtobj.shiftKey&&evtobj.keyCode==13){
+        window.location.href="adminLogin.php";
+    }
+}
 //Log Out
 function logOut(){
    window.location.href="./Procesos/logout.php"; 

@@ -158,7 +158,7 @@
                     <?php
         }else{
     ?>
-                        <div class="col-xs-7 text-right menu-1">
+                        <div class="col-xs-6 text-right menu-1">
                             <ul>
                                 <li id="index"><a href="index.php">Inicio</a></li>
                                 <li id="services"><a href="producto.php">Comprar Productos</a></li>
@@ -169,7 +169,7 @@
                         <!--<div class="col-xs-1 menu-1">
                         <div class="hexagon"></div>
                     </div>-->
-                        <div class="col-xs-1 menu-1">
+                        <div class="col-xs-2 menu-1">
                             <div id="dropdown" name="dropdown" class="dropdown">
                                 <button onclick="myFunction(event);" class="dropbtn" id="dropbtn">
                                     <?php echo $_SESSION["Usuario"];?>
@@ -177,13 +177,16 @@
                                 <div id="myDropdown" class="dropdown-content">
                                     <a href="modificarPerfil.php">Mi Perfil</a>
                                     <br>
-                                    <a href="carrito.php">Mi Carrito</a>
-                                    <br>
                                     <a href="historial.php">Historial</a>
                                     <br>
                                     <a onclick="logOut();">Log Out</a>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-xs-1" id="cart">
+                            <button onclick="window.location.href='carrito.php'" class="dropbtn btn-primary">
+                                <span class="icon-shopping-cart"></span>Carrito <span class="badge"></span>
+                            </button>
                         </div>
                         <div id="dialog" class="modal" style="margin-left:0;width:100%;">
                         <section>
