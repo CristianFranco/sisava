@@ -25,8 +25,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="dashboard.php">Panel de Ventas</a></li>
-                    <li><a href="empleados.php">Panel de Empleados</a></li>
-                    <li><a href="pendientes.php">Ventas Pendientes</a></li>
+                    <li><a id="cart" href="pendientes.php">Ventas Pendientes<span class="badge"></span></a></li>
                     <li><a href="Procesos/logout.php">Cerrar Sesión</a></li>
                 </ul>
             </div>

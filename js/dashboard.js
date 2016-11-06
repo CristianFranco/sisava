@@ -6,7 +6,26 @@ $(document).ready(function () {
     numeroClientes();
     google.charts.setOnLoadCallback(ventasMes);
     google.charts.setOnLoadCallback(topProductos);
+    google.charts.setOnLoadCallback(avanceEmpleados);
     google.charts.setOnLoadCallback(topEstados);
+    $.ajax({
+            url: './Procesos/ventasPendientes.php',
+            method: 'POST',
+            success: function(data){
+                var numArticulos=JSON.parse(data);
+                $("#cart").find('.badge').html(numArticulos["ventas"]);
+            }
+        });
+    setInterval(function(){
+        $.ajax({
+            url: './Procesos/ventasPendientes.php',
+            method: 'POST',
+            success: function(data){
+                var numArticulos=JSON.parse(data);
+                $("#cart").find('.badge').html(numArticulos["ventas"]);
+            }
+        });
+    },1000);
 });
 
 function ventasAnuales() {
@@ -14,7 +33,7 @@ function ventasAnuales() {
         url: './Procesos/Dashboard/ventasAnuales.php',
         success: function (data) {
             var ventaAnual = JSON.parse(data);
-            $('#ventas').html('<h1 style="text-align: center;line-height:75px;">$' + ventaAnual["ventaAnual"] + '.00</h1>')
+            $('#ventas').html('<h2 style="text-align: center;line-height:75px;">$' + ventaAnual["ventaAnual"] + '.00</h2>')
         }
     });
 }
@@ -24,7 +43,7 @@ function numeroClientes() {
         url: './Procesos/Dashboard/numeroClientes.php',
         success: function (data) {
             var numeroClientes = JSON.parse(data);
-            $('#clientes').html('<h1  style="text-align: center;line-height:75px;">' + numeroClientes["numeroClientes"] + '</h1>')
+            $('#clientes').html('<h2 style="text-align: center;line-height:75px;">' + numeroClientes["numeroClientes"] + '</h2>')
         }
     });
 }
@@ -64,7 +83,28 @@ function topProductos() {
         }
     });
 }
-
+function avanceEmpleados() {
+    $.ajax({
+        url: './Procesos/Dashboard/avanceEmpleados.php',
+        dataType: "json",
+        success: function (data) {
+            var datos = new google.visualization.DataTable(data);
+            var options = {
+                animation: {
+                    duration: 500,
+                    startup: true,
+                },
+                height: 140,
+                colors: ['red','green'],
+                vAxis: {
+                    minValue: 0,
+                },
+            };
+            var chart = new google.visualization.ColumnChart(document.getElementById('empleados'));
+            chart.draw(datos, options);
+        }
+    });
+}
 function topEstados() {
     var data = google.visualization.arrayToDataTable([
           ['States', 'Estado', 'Ventas'],

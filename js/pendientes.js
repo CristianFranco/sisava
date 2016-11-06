@@ -1,3 +1,23 @@
+$(document).ready(function(){
+    $.ajax({
+        url: './Procesos/ventasPendientes.php',
+        method: 'POST',
+        success: function(data){
+            var numArticulos=JSON.parse(data);
+            $("#cart").find('.badge').html(numArticulos["ventas"]);
+        }
+    });
+    setInterval(function(){
+        $.ajax({
+            url: './Procesos/ventasPendientes.php',
+            method: 'POST',
+            success: function(data){
+                var numArticulos=JSON.parse(data);
+                $("#cart").find('.badge').html(numArticulos["ventas"]);
+            }
+        });
+    },1000);
+});
 var fadeTime = 300;
 $('.product-removal button').click( function() {
   removeItem(this);

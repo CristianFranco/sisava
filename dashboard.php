@@ -24,8 +24,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-left">
                     <li><a href="dashboard.php">Panel de Ventas</a></li>
-                    <li><a href="empleados.php">Panel de Empleados</a></li>
-                    <li><a href="pendientes.php">Ventas Pendientes</a></li>
+                    <li><a id="cart" href="pendientes.php">Ventas Pendientes<span class="badge"></span></a></li>
                     <li><a href="Procesos/logout.php">Cerrar Sesión</a></li>
                 </ul>
             </div>
@@ -34,7 +33,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <div class="chart-wrapper">
                     <div class="chart-title">
                         Ingresos del Año
@@ -44,7 +43,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-sm-offset-6">
+            <div class="col-sm-8">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Avance de Empleados
+                    </div>
+                    <div id="empleados" class="chart-stage">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2">
                 <div class="chart-wrapper">
                     <div class="chart-title">
                         Número de Clientes
