@@ -76,7 +76,8 @@ function topProductos() {
                 animation: {
                     duration: 500,
                     startup: true,
-                }
+                },
+                         'height':300
             };
             var chart = new google.visualization.ColumnChart(document.getElementById('producto'));
             chart.draw(datos, options);

@@ -85,13 +85,26 @@
 
         <div class="row">
 
-            <div class="col-sm-6">
+            <div class="col-sm-3">
                 <div class="chart-wrapper">
                     <div class="chart-title">
                         Ventas por Categoría
                     </div>
                     <div class="chart-stage">
-                        <div id="categoria"></div>
+                        <div id="chart_div"></div>
+                    </div>
+                    <div class="chart-notes">
+                        Muestra las ventas por cada categoría de producto.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Ventas por Categoría
+                    </div>
+                    <div class="chart-stage">
+                <div id="chart_div2" hidden="true">grafica</div>
                     </div>
                     <div class="chart-notes">
                         Muestra las ventas por cada categoría de producto.
@@ -153,6 +166,8 @@
     <script type="text/javascript" src="js/meta.js"></script>
     <script type="text/javascript" src="js/keen.dashboard.js"></script>
     <script type="text/javascript" src="js/dashboard.js"></script>
+        <script type="text/javascript" src="js/graficaCfa.js"></script>
+
 </body>
 
 </html>
