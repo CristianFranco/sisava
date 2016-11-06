@@ -87,7 +87,7 @@
                             <?php
                                 require("Procesos/connection.php");
                                 $connection=connect();
-                                $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=3 and IdUsuario=$_SESSION[IdUser] and Fecha is not null;";
+                                $query="select DISTINCT date(Fecha) as fecha from venta where IdEstadoVenta=3 or IdEstadoVenta=4 and IdUsuario=$_SESSION[IdUser] and Fecha is not null;";
                                 $result=$connection->query($query);
                                 if($result->num_rows>0){
                             ?>
