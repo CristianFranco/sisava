@@ -25,7 +25,7 @@
     <body>
         <div id="wrapper">
             <div id="login" class="animate form">
-                <form id="loginForm" method="post" action="./Procesos/login.php" autocomplete="on">
+                <form id="loginForm" method="post" autocomplete="on">
                     <h1>Inicia Sesión como Administrador</h1>
                     <p>
                         <label for="username" class="uname" data-icon="u"> Usuario Administrador </label>
@@ -43,5 +43,9 @@
             </div>
         </div>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
     <script src="js/admin.js"></script>
 </html>
