@@ -5,7 +5,7 @@ require("../Procesos/connection.php");
     $IdUser = $_GET['IdUser'];
     $query="select venta.IdVenta,venta.FechaInstalacion, producto.Nombre,ventaproducto.Cantidad, domicilio.Latitud, domicilio.Longitud from
  ventaproducto,producto,venta,domicilio
-where venta.IdUsuarioEmpleado = $IdUser and venta.IdEstadoVenta = 3 or venta.IdEstadoVenta = 4
+where venta.IdUsuarioEmpleado = $IdUser and (venta.IdEstadoVenta = 3 or venta.IdEstadoVenta = 4)
 and ventaproducto.IdVenta = venta.IdVenta 
 and domicilio.IdDomicilio = venta.IdDomicilio
 and producto.IdProducto = ventaproducto.IdProducto;";
