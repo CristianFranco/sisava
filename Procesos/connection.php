@@ -6,7 +6,7 @@
         $database = "sithecdb";
         $conn = new mysqli($servername, $username, $password, $database);
         
-        if(mysqli_connect_errno()){
+       if(mysqli_connect_errno()){
             echo "Error conectando a la base de datos: " . mysqli_connect_error();
             exit();
         }
