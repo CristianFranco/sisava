@@ -18,7 +18,7 @@ require("../Procesos/connection.php");
     	break;
     }
     $response;
-    if($idTipoUsuario == 1){
+    if($idTipoUsuario == 1 || $idTipoUsuario == 0){
     	$response=array("success"=>false,"idUsuario" => 0, "Tipo" => 0);
     }else{
     	$response=array("success"=>true,"idUsuario" => $idUsuario, "Tipo" => $idTipoUsuario);
@@ -26,5 +26,4 @@ require("../Procesos/connection.php");
 
     echo json_encode($response);
     	
-    
 ?>
