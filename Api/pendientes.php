@@ -3,7 +3,7 @@ require("../Procesos/connection.php");
 
 	$connection=connect();	
 	$IdUser = $_GET['IdUser'];
-	$query="select venta.IdVenta, venta.FechaInstalacion,producto.Nombre,ventaproducto.Cantidad from
+	$query="select venta.IdVenta,venta.FechaInstalacion, producto.Nombre,ventaproducto.Cantidad from
  ventaproducto,producto,venta 
 where venta.IdUsuarioEmpleado = $IdUser and venta.IdEstadoVenta = 2 
 and ventaproducto.IdVenta = venta.IdVenta 
@@ -36,6 +36,8 @@ and producto.IdProducto = ventaproducto.IdProducto;";
             $pendiente = array("IdVenta"=>$idVenta,'Fecha'=>$fecha,"items" => $ventas);
             array_push($pendientes, $pendiente);
             $idVenta = $row['IdVenta'];
+                        $fecha = $row['FechaInstalacion'];
+
             $ventas = array();
         }
             $Nombre = $row['Nombre'];
