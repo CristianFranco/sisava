@@ -6,11 +6,12 @@
 	$query = "update venta set IdEstadoVenta = 3
 		where IdVenta = $idVenta;";
     $messageResult = "Bien";
-    		$band = true;
+    $band = true;
    	if(!($connection -> query($query))){
     		$messageResult = "error al crear la relacion con la  venta";
     		$band = false;
    	}
 
-   	$response=array("success"=>$band,"message" => $message);
+   	$response=array("success"=>$band,"message" => $messageResult);
+   	echo json_encode($response);
 ?>
