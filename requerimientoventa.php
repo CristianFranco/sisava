@@ -50,13 +50,15 @@
 		<ul>
 		<?php
 			require("Procesos/connection.php");
+            require("Procesos/crypto.php");
 		    $connection=connect();
 		    $idUser= $_SESSION["IdUser"];
 		    $queryDay = "select * from domicilio where IdUsuario = $idUser";
 			$result = $connection -> query($queryDay);
 			while($row=$result->fetch_array(MYSQLI_ASSOC)){
-		    
-		    	echo "<li style='list-style-type: none;margin-left:0px;'><button class=\"form-control\" onclick=\"cargaDireccion($row[Latitud],$row[Longitud],$row[IdDomicilio])\">$row[Nombre]</button></li>";
+                $latitud=$row["Latitud"];
+                $longitud=$row["Longitud"];
+		    	echo "<li style='list-style-type: none;margin-left:0px;'><button class=\"form-control\" onclick=\"cargaDireccion(".$latitud.",".$longitud.",$row[IdDomicilio])\">$row[Nombre]</button></li>";
 			}
 		 ?>
 		 </ul>

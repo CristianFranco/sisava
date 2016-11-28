@@ -1,5 +1,6 @@
 <?php
     require("connection.php");
+    require("crypto.php");
     $connection=connect();
     $IdProducto=$_POST["IdProducto"];
     $query="select * from producto where IdProducto='".$IdProducto."';";
@@ -27,6 +28,7 @@
         $html.="<a href='#'><img src='./images/productos/$imgArray[UrlImagen]' alt='' style='height: 300px;width:100%'></a></div>";
         $i++;
     }
+    $decryptedPrice=decrypt($row["Precio"]);
     $html.="
                     </div>
                     <a class='left carousel-control' href='#myCarousel' data-slide='prev'>‹</a>
@@ -48,7 +50,7 @@
                     <div class='control-group'>
                         <label class='control-label'><span>Precio</span></label>
                         <div class='controls'>
-                            <input type='text' disabled class='span6' value='$row[Precio]'>
+                            <input type='text' disabled class='span6' value='$decryptedPrice'>
                         </div>
                     </div>
                     <div class='control-group'>

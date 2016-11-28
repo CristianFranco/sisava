@@ -1,5 +1,6 @@
 <?php
     require("connection.php");
+    require("crypto.php");
     $connection=connect();
     if(isset($_POST["Categoria"])){
         $idCategoria=$_POST["Categoria"];
@@ -18,6 +19,7 @@
                                             if($i%3==0){
                                                 $html.= "<div class='row-fluid'><ul class='thumbnails'>";
                                             }
+                                            $decryptedPrice=decrypt($row["Precio"]);
                                             $html.= "
                                                 
                                                     <li class='span4'>
@@ -27,7 +29,7 @@
                                                             <a onclick='mostrarDetalle($row[IdProducto])'><img src='./images/productos/$row[UrlImagen]' alt=''></a>
                                                             <div class='caption cntr'>
                                                                 <p>$row[Nombre]</p>
-                                                                <p><strong>$$row[Precio]</strong></p>
+                                                                <p><strong>$$decryptedPrice</strong></p>
                                                                 <h4><a class='shopBtn' onclick='agregarCarrito($row[IdProducto])' title='add to cart'> Añadir al Carrito </a></h4>
                                                                 <br class='clr'>
                                                             </div>
@@ -60,6 +62,7 @@
                                             if($i%3==0){
                                                 $html.= "<div class='row-fluid'><ul class='thumbnails'>";
                                             }
+                                            $decryptedPrice=decrypt($row["Precio"]);
                                             $html.= "
                                                     <li class='span4'>
                                                         <div class='thumbnail'>
@@ -68,7 +71,7 @@
                                                             <a onclick'mostrarDetalle($row[IdProducto])'><img src='./images/productos/$row[UrlImagen]' alt=''></a>
                                                             <div class='caption cntr'>
                                                                 <p>$row[Nombre]</p>
-                                                                <p><strong>$$row[Precio]</strong></p>
+                                                                <p><strong>$$decryptedPrice</strong></p>
                                                                 <h4><a class='shopBtn' onclick='agregarCarrito($row[IdProducto])' title='add to cart'> Añadir al Carrito </a></h4>
                                                                 <br class='clr'>
                                                             </div>

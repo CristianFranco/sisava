@@ -88,6 +88,7 @@
                     <?php
 
                          require("./Procesos/connection.php");
+                        require("./Procesos/crypto.php");
                             $connection=connect();
 
                             $user= $_SESSION["IdUser"];
@@ -101,7 +102,8 @@
                             $result=$connection -> query($query);
                             $total = 0;
                             while($row=$result->fetch_array(MYSQLI_ASSOC)){
-                                  $totalParcial = $row["Precio"]*$row["Cantidad"];
+                                $decryptedPrice=decrypt($row["Precio"]);
+                                  $totalParcial = $decryptedPrice*$row["Cantidad"];
                                   $total = $totalParcial + $total;
                                 echo "<div class='product'>
                                     <div class='product-image'>
@@ -111,7 +113,7 @@
                                         <div class='product-title'>$row[Nombre]</div>
                                         <p class='product-description'>$row[Descripcion]</p>
                                     </div>
-                                    <div class='product-price'>$row[Precio]</div>
+                                    <div class='product-price'>$decryptedPrice</div>
                                     <div class='product-quantity'>
                                         <input type='number' onchange='actualizarCantidad($row[IdVenta],$row[IdProducto],event)' value='$row[Cantidad]' min='1'>
                                     </div>

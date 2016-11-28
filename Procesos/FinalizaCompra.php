@@ -4,6 +4,7 @@
 	$message = "Servicio con exito";
 
 	require("connection.php");
+    require("crypto.php")
 	$connection=connect();
  	session_start();
     $Uid = $_SESSION["IdUser"];
